@@ -46,6 +46,12 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 Set the nginx location to `/shogun-docs/`
 
 # ToDo's
-- More detailed GIS-Client documentation with focus on the tools
 - Embed Videos again (need to be recorded first)
 
+Web-GIS-Client
+- More detailed GIS-Client documentation with focus on the tools
+
+Admin-Client
+- No documentation for User, Groups, Images
+- No documentation for Status / Configuration
+- Subjects -> no documentation for the features configuration
