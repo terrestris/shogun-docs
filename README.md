@@ -39,3 +39,13 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+# Integration into SHOGun Projects
+
+### nginx
+Set the nginx location to `/shogun-docs/`
+
+# ToDo's
+- More detailed GIS-Client documentation with focus on the tools
+- Embed Videos again (need to be recorded first)
+
