@@ -12,8 +12,6 @@ const config = {
 
   // Set the production url of your site here
   url: 'http://localhost/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/shogun-docs/',
 
   // GitHub pages deployment config.
@@ -39,10 +37,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
@@ -60,7 +54,7 @@ const config = {
       navbar: {
         // title: 'Web-GIS',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'SHOGun logo',
           src: 'img/shogun_logo.png',
         },
         items: [
@@ -70,9 +64,8 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/terrestris/shogun-docker',
             label: 'GitHub',
             position: 'right',
           },
@@ -81,15 +74,6 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          // {
-          //   title: 'Docs',
-          //   items: [
-          //     {
-          //       label: 'Tutorial',
-          //       to: '/docs/intro',
-          //     },
-          //   ],
-          // },
           {
             title: 'Community',
             items: [

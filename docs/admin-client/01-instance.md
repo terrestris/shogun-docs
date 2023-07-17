@@ -56,7 +56,7 @@ This field stores the configuration of the application in JSON format. Every app
     "complementaryColor": "#ffffff",
     "logoPath": "null"
   }
-  }, null, '  ')
+  }, null, "  ")
   }
   </pre>
 </div>
@@ -64,25 +64,32 @@ This field stores the configuration of the application in JSON format. Every app
 
 This is a full list of parameters that can be edited:
 
-|Key|Description|Example|Required|
+<!-- generated using https://www.tablesgenerator.com/markdown_tables -->
+
+| Key | Description | Example | Required |
 |---|---|---|---|
-|`mapView -> zoom`|Zoom level at which the map is initially loaded|7|false|
-|`mapView -> center`|Position of the map to which the map is initially centered|"center": [7,51]|true|
-|`mapView -> extent`|The maximum extent of the map (in WGS84)|'[2.5683045738288137, 45.429089001638076, 19.382621082401887, 57.283993958205926]'|false|
-|`mapView -> projection`|Coordinate projection of the map|'EPSG:25832'|false|
-|`mapView -> resolutions`|The list of resolutions of the map|'[2445.9849047851562, 1222.9924523925781, 611.4962261962891]'|false|
-|`description`|Description of the application to be displayed on the start page|'My Web-GIS'|false|
-|`theme -> primaryColor`|Defines the background color of the header and footer element|'#444444'|false|
-|`theme -> secondaryColor`|Defines the hovering color of text elements and buttons|'#ffc0cb'|false|
-|`theme -> complementaryColor`|Defines the font color of text elements within header and footer component|'#000000'|false|
-|`theme -> logoPath`|URL of the logo which is displayed in the header component|https://my-logo.de/img/my-logo.png|false|
+| `defaultLanguage` | The default language of the application [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). | "de" | false |
+| `description` | Description of the application to be displayed on the start page. | "My Web-GIS" | false |
+| `legal -> imprint` | URL pointing to imprint page/section. | "/imprint" | false |
+| `legal -> imprint` | URL pointing to contact details. | "/imprint" | false |
+| `legal -> privacy` | URL pointing to data privacy. | "/privacy" | false |
+| `mapView -> zoom` | The initial zoom level of the map. | 7 | false |
+| `mapView -> center` | The initial center of the map (in WGS84). | "center": [7,51] | true |
+| `mapView -> extent` | The maximum extent of the map (in WGS84). | `[2.5683045738288137, 45.429089001638076, 19.382621082401887, 57.283993958205926]` | false |
+| `mapView -> projection` | Coordinate reference system of the map (EPSG-Code). | "EPSG:3857" | false |
+| `mapView → crsDefinitions` | The list of CRS definitions in proj4 format that should be registered in the application additionally. | { <br/>"crsCode": "EPSG:25832",<br/>"definition": "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"<br/>} | false |
+| `mapView -> resolutions` | The list of resolutions of the map. | `[2445.9849047851562, 1222.9924523925781, 611.4962261962891]` | false |
+| `theme -> primaryColor` | Defines the background color of the header and footer element. | "#444444" | false |
+| `theme -> secondaryColor` | Defines the hovering color of text elements and buttons. | "#ffc0cb" | false |
+| `theme -> complementaryColor` | Defines the font color of text elements within header and footer component. | "#000000" | false |
+| `theme -> logoPath` | URL of the logo which is displayed in the header component. | "https://my-logo.de/img/my-logo.png" | false |
 
 <!-- You can find an illustrative example of how to change the zoom level, the center and the primary color in the following video:
 <ReactPlayer controls width="max" height="max" url="/shogun-docs/videos/admin-client-configuration.mp4" /> -->
 
 ## Layer tree
 
-This field stores the configuration for the application's layer tree in JSON format:
+This field stores the configuration for the application"s layer tree in JSON format:
 
 <details>
 <summary>Layer tree configuration as <b>JSON</b></summary>
@@ -185,7 +192,7 @@ This field stores the configuration for the application's layer tree in JSON for
       ]
     }
   ]
-  }, null, '  ')
+  }, null, "  ")
   }
   </pre>
 </div>
@@ -231,7 +238,7 @@ This is a full list of parameters that can be edited:
 
 |Key|Description|Example|Required|
 |---|---|---|---|
-|`title`|Layer- or group name displayed within the layer tree. If not set, the layer name of the internal geoserver will be used|'My base layers'|false|
+|`title`|Layer- or group name displayed within the layer tree. If not set, the layer name of the internal geoserver will be used|"My base layers"|false|
 |`checked`|Defines whether a layer or all layers within a layer group shall be visible initially|true|false|
 |`children`|Array of layer and layer group|[{"title": "layer 1", "checked": true, "layerId":1 }]|false|
 |`layerId`|LayerId corresponding to the LayerId of the [Subject](../admin-client/02-subject.md)|1|true|
@@ -411,7 +418,7 @@ This field stores the configuration for the application tools in JSON format:
       "visible": true
     }
   }
-  ], null, '  ')
+  ], null, "  ")
   }
   </pre>
 </div>
