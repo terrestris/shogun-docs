@@ -21,15 +21,15 @@ This field stores the configuration of the application in JSON format. Every app
   {
   JSON.stringify(
   {
-   "mapView": {
-    "zoom": 3,
-    "center": [
+   'mapView': {
+    'zoom': 3,
+    'center': [
       11.4717964,
       48.155004
     ],
-    "extent": null,
-    "projection": "EPSG:3857",
-    "resolutions": [
+    'extent': null,
+    'projection': 'EPSG:3857',
+    'resolutions': [
       8920,
       4480,
       2240,
@@ -49,14 +49,14 @@ This field stores the configuration of the application in JSON format. Every app
       0.07
     ]
   },
-  "description": "This is the Web GIS 1",
-  "theme": {
-    "primaryColor": "#555555",
-    "secondaryColor": "#73b3fb",
-    "complementaryColor": "#ffffff",
-    "logoPath": "null"
+  'description': 'This is the Web GIS 1',
+  'theme': {
+    'primaryColor': '#555555',
+    'secondaryColor': '#73b3fb',
+    'complementaryColor': '#ffffff',
+    'logoPath': 'null'
   }
-  }, null, "  ")
+  }, null, '  ')
   }
   </pre>
 </div>
@@ -68,28 +68,28 @@ This is a full list of parameters that can be edited:
 
 | Key | Description | Example | Required |
 |---|---|---|---|
-| `defaultLanguage` | The default language of the application [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). | "de" | false |
-| `description` | Description of the application to be displayed on the start page. | "My Web-GIS" | false |
-| `legal -> imprint` | URL pointing to imprint page/section. | "/imprint" | false |
-| `legal -> imprint` | URL pointing to contact details. | "/imprint" | false |
-| `legal -> privacy` | URL pointing to data privacy. | "/privacy" | false |
+| `defaultLanguage` | The default language of the application [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). | 'de' | false |
+| `description` | Description of the application to be displayed on the start page. | 'My Web-GIS' | false |
+| `legal -> imprint` | URL pointing to imprint page/section. | '/imprint' | false |
+| `legal -> imprint` | URL pointing to contact details. | '/imprint' | false |
+| `legal -> privacy` | URL pointing to data privacy. | '/privacy' | false |
 | `mapView -> zoom` | The initial zoom level of the map. | 7 | false |
-| `mapView -> center` | The initial center of the map (in WGS84). | "center": [7,51] | true |
+| `mapView -> center` | The initial center of the map (in WGS84). | 'center': [7,51] | true |
 | `mapView -> extent` | The maximum extent of the map (in WGS84). | `[2.5683045738288137, 45.429089001638076, 19.382621082401887, 57.283993958205926]` | false |
-| `mapView -> projection` | Coordinate reference system of the map (EPSG-Code). | "EPSG:3857" | false |
-| `mapView → crsDefinitions` | The list of CRS definitions in proj4 format that should be registered in the application additionally. | { <br/>"crsCode": "EPSG:25832",<br/>"definition": "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"<br/>} | false |
+| `mapView -> projection` | Coordinate reference system of the map (EPSG-Code). | 'EPSG:3857' | false |
+| `mapView → crsDefinitions` | The list of CRS definitions in proj4 format that should be registered in the application additionally. | { <br/>'crsCode': 'EPSG:25832',<br/>'definition': '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'<br/>} | false |
 | `mapView -> resolutions` | The list of resolutions of the map. | `[2445.9849047851562, 1222.9924523925781, 611.4962261962891]` | false |
-| `theme -> primaryColor` | Defines the background color of the header and footer element. | "#444444" | false |
-| `theme -> secondaryColor` | Defines the hovering color of text elements and buttons. | "#ffc0cb" | false |
-| `theme -> complementaryColor` | Defines the font color of text elements within header and footer component. | "#000000" | false |
-| `theme -> logoPath` | URL of the logo which is displayed in the header component. | "https://my-logo.de/img/my-logo.png" | false |
+| `theme -> primaryColor` | Defines the background color of the header and footer element. | '#444444' | false |
+| `theme -> secondaryColor` | Defines the hovering color of text elements and buttons. | '#ffc0cb' | false |
+| `theme -> complementaryColor` | Defines the font color of text elements within header and footer component. | '#000000' | false |
+| `theme -> logoPath` | URL of the logo which is displayed in the header component. | 'https://my-logo.de/img/my-logo.png' | false |
 
 <!-- You can find an illustrative example of how to change the zoom level, the center and the primary color in the following video:
-<ReactPlayer controls width="max" height="max" url="/shogun-docs/videos/admin-client-configuration.mp4" /> -->
+<ReactPlayer controls width='max' height='max' url='/shogun-docs/videos/admin-client-configuration.mp4' /> -->
 
 ## Layer tree
 
-This field stores the configuration for the application"s layer tree in JSON format:
+This field stores the configuration for the application's layer tree in JSON format:
 
 <details>
 <summary>Layer tree configuration as <b>JSON</b></summary>
@@ -98,101 +98,101 @@ This field stores the configuration for the application"s layer tree in JSON for
   {
   JSON.stringify(
   {
-  "title": "root",
-  "children": [
+  'title': 'root',
+  'children': [
     {
-      "title": "Copernicus Services",
-      "checked": false,
-      "children": [
+      'title': 'Copernicus Services',
+      'checked': false,
+      'children': [
         {
-          "title": "Land - VHR Mosaic",
-          "checked": false,
-          "children": [
+          'title': 'Land - VHR Mosaic',
+          'checked': false,
+          'children': [
             {
-              "title": "VHR 2018",
-              "checked": false,
-              "layerId": 23
+              'title': 'VHR 2018',
+              'checked': false,
+              'layerId': 23
             },
             {
-              "title": "VHR 2012",
-              "checked": false,
-              "layerId": 22
+              'title': 'VHR 2012',
+              'checked': false,
+              'layerId': 22
             }
           ]
         },
         {
-          "title": "Surfaceobservation - ESA WorldCover",
-          "checked": false,
-          "children": [
+          'title': 'Surfaceobservation - ESA WorldCover',
+          'checked': false,
+          'children': [
             {
-              "title": "Worldcover 2020",
-              "checked": false,
-              "layerId": 26
+              'title': 'Worldcover 2020',
+              'checked': false,
+              'layerId': 26
             }
           ]
         }
       ]
     },
     {
-      "title": "Community Contributions",
-      "checked": true,
-      "children": [
+      'title': 'Community Contributions',
+      'checked': true,
+      'children': [
         {
-          "title": "Incora",
-          "checked": true,
-          "children": [
+          'title': 'Incora',
+          'checked': true,
+          'children': [
             {
-              "title": "Land Cover 2016",
-              "checked": false,
-              "layerId": 19
+              'title': 'Land Cover 2016',
+              'checked': false,
+              'layerId': 19
             },
             {
-              "title": "Land Cover 2019",
-              "checked": false,
-              "layerId": 20
+              'title': 'Land Cover 2019',
+              'checked': false,
+              'layerId': 20
             },
             {
-              "title": "Land Cover 2020",
-              "checked": true,
-              "layerId": 21
+              'title': 'Land Cover 2020',
+              'checked': true,
+              'layerId': 21
             }
           ]
         },
         {
-          "title": "Building Height Map (DE)",
-          "checked": false,
-          "layerId": 27
+          'title': 'Building Height Map (DE)',
+          'checked': false,
+          'layerId': 27
         },
         {
-          "title": "Land Cover Fraction Map (DE)",
-          "checked": false,
-          "layerId": 25
+          'title': 'Land Cover Fraction Map (DE)',
+          'checked': false,
+          'layerId': 25
         }
       ]
     },
     {
-      "title": "Backgroundlayer",
-      "checked": true,
-      "children": [
+      'title': 'Backgroundlayer',
+      'checked': true,
+      'children': [
         {
-          "title": "GEBCO",
-          "checked": false,
-          "layerId": 28
+          'title': 'GEBCO',
+          'checked': false,
+          'layerId': 28
         },
         {
-          "title": "OSM-WMS",
-          "checked": false,
-          "layerId": 24
+          'title': 'OSM-WMS',
+          'checked': false,
+          'layerId': 24
         },
         {
-          "title": "OSM-WMS (gray)",
-          "checked": true,
-          "layerId": 16
+          'title': 'OSM-WMS (gray)',
+          'checked': true,
+          'layerId': 16
         }
       ]
     }
   ]
-  }, null, "  ")
+  }, null, '  ')
   }
   </pre>
 </div>
@@ -200,29 +200,29 @@ This field stores the configuration for the application"s layer tree in JSON for
 
 The layer tree consists of two different elements `Layer` and `Layer group` which are defined in the JSON document. A `Layer` has the following structure:
 ```
-"title": "My Layer",
-"checked": false,
-"layerId": 42
+'title': 'My Layer',
+'checked': false,
+'layerId': 42
 ```
 One or more layers can be part of a `Layer group`. In this case they need to be added to the `children`-array as follow:
 ```
-"title": "My Layer group",
-"checked": true,
-"children": [
+'title': 'My Layer group',
+'checked': true,
+'children': [
   {
-    "title": "Layer 1",
-    "checked": true,
-    "layerId": 12
+    'title': 'Layer 1',
+    'checked': true,
+    'layerId': 12
   },
   {
-    "title": "Layer 2",
-    "checked": true,
-    "layerId": 24
+    'title': 'Layer 2',
+    'checked': true,
+    'layerId': 24
   },
   {
-    "title": "Layer 3",
-    "checked": true,
-    "layerId": 16
+    'title': 'Layer 3',
+    'checked': true,
+    'layerId': 16
   }
 ]
 ```
@@ -238,13 +238,13 @@ This is a full list of parameters that can be edited:
 
 |Key|Description|Example|Required|
 |---|---|---|---|
-|`title`|Layer- or group name displayed within the layer tree. If not set, the layer name of the internal geoserver will be used|"My base layers"|false|
+|`title`|Layer- or group name displayed within the layer tree. If not set, the layer name of the internal geoserver will be used|'My base layers'|false|
 |`checked`|Defines whether a layer or all layers within a layer group shall be visible initially|true|false|
-|`children`|Array of layer and layer group|[{"title": "layer 1", "checked": true, "layerId":1 }]|false|
+|`children`|Array of layer and layer group|[{'title': 'layer 1', 'checked': true, 'layerId':1 }]|false|
 |`layerId`|LayerId corresponding to the LayerId of the [Subject](../admin-client/02-subject.md)|1|true|
 
 <!-- You can find an illustrative example of how to change the name or initial visibility of a layer in the following video:
-<ReactPlayer controls width="max" height="max" url="/shogun-docs/videos/admin-client-layertree.mp4" /> -->
+<ReactPlayer controls width='max' height='max' url='/shogun-docs/videos/admin-client-layertree.mp4' /> -->
 
 ## Layer configuration
 
@@ -254,21 +254,21 @@ Each layer to be modified is an object within a array:
 ```
 [
   {
-    "layerId": 1,
-    "clientConfig": {
-      "opacity": 0.5
+    'layerId': 1,
+    'clientConfig': {
+      'opacity': 0.5
     }
   },
   {
-    "layerId": 2,
-    "clientConfig": {
-      "hoverable": true
+    'layerId': 2,
+    'clientConfig': {
+      'hoverable': true
     }
   },
   {
-    "layerId": 3,
-    "sourceConfig": {
-      "useBearerToken": true
+    'layerId': 3,
+    'sourceConfig': {
+      'useBearerToken': true
     }
   }
 ]
@@ -305,120 +305,120 @@ This field stores the configuration for the application tools in JSON format:
   JSON.stringify(
   [
   {
-    "name": "measure_tools",
-    "config": {
-      "visible": true
+    'name': 'measure_tools',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "measure_tools_distance",
-    "config": {
-      "visible": true
+    'name': 'measure_tools_distance',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "measure_tools_area",
-    "config": {
-      "visible": true
+    'name': 'measure_tools_area',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools",
-    "config": {
-      "visible": true
+    'name': 'draw_tools',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_point",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_point',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_line",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_line',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_polygon",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_polygon',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_circle",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_circle',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_rectangle",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_rectangle',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_annotation",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_annotation',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_modify",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_modify',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_upload",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_upload',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_download",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_download',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "draw_tools_delete",
-    "config": {
-      "visible": true
+    'name': 'draw_tools_delete',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "feature_info",
-    "config": {
-      "visible": true
+    'name': 'feature_info',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "print",
-    "config": {
-      "visible": true
+    'name': 'print',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "tree",
-    "config": {
-      "visible": true
+    'name': 'tree',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "permalink",
-    "config": {
-      "visible": true
+    'name': 'permalink',
+    'config': {
+      'visible': true
     }
   },
   {
-    "name": "language_selector",
-    "config": {
-      "visible": true
+    'name': 'language_selector',
+    'config': {
+      'visible': true
     }
   }
-  ], null, "  ")
+  ], null, '  ')
   }
   </pre>
 </div>
@@ -440,7 +440,7 @@ If you leave the configuration blank, all tools will be available by default. As
 :::
 
 <!-- You can find an illustrative example of how to change the visibility of a tool in the following video:
-<ReactPlayer controls width="max" height="max" url="/shogun-docs/videos/admin-client-configure-tools.mp4" /> -->
+<ReactPlayer controls width='max' height='max' url='/shogun-docs/videos/admin-client-configure-tools.mp4' /> -->
 
 ## User permissions
 
@@ -468,4 +468,4 @@ Every user listed within the permission grid has access to the Web-GIS applicati
 :::
 
 <!-- You can find an illustrative example of how to grant permissions to a user in the following video:
-<ReactPlayer controls width="max" height="max" url="/shogun-docs/videos/admin-client-permissions.mp4" /> -->
+<ReactPlayer controls width='max' height='max' url='/shogun-docs/videos/admin-client-permissions.mp4' /> -->
