@@ -38,8 +38,8 @@ export default function Home() {
           <p></p>
           <div />
             <p>
-              Welcome to the <b>SHOGun</b>-Manual. This manual is
-              designed to give a comprehensive overview of the functionalities
+              Welcome to the <b>SHOGun</b>-Manual.<br/>
+              This manual is designed to give a comprehensive overview of the functionalities
               of the <b>SHOGun</b>-Web-GIS application based on the Userstories.
             </p>
             <h2>Authors:</h2>
@@ -49,6 +49,9 @@ export default function Home() {
               </li>
               <li>
                 Arnulf B. Christl (<a href="mailto:christl@terrestris.de?subject=SHOGun-Manual">christl@terrestris.de</a>)
+              </li>
+              <li>
+                Hannes Blitza (<a href="mailto:blitza@terrestris.de?subject=SHOGun-Manual">blitza@terrestris.de</a>)
               </li>
             </ul>
           <div />
