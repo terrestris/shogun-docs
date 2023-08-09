@@ -12,7 +12,7 @@ const config = {
 
   // Set the production url of your site here
   url: 'http://localhost/',
-  baseUrl: '/shogun-docs/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
