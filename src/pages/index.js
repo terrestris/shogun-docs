@@ -43,7 +43,7 @@ export default function Home() {
               of the <b>SHOGun</b>-Web-GIS application based on the Userstories.
             </p>
             <h2>Authors:</h2>
-            <ul class="authors-list">
+            <ul className="authors-list">
               <li>
                 Fritz Höing (<a href="mailto:hoeing@terrestris.de?subject=SHOGun-Manual">hoeing@terrestris.de</a>)
               </li>

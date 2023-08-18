@@ -1,6 +1,9 @@
-# Integration into SHOGun Projects
+# SHOGun Documentation
+
+This repository contains the documentation for the SHOGun webapplication.
 
 ### nginx
+
 Set the nginx location to `/shogun-docs/`
 
 # ToDo's
