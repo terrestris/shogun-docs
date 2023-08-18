@@ -13,7 +13,7 @@ The basic technology behind the **SHOGun**-web-application is made up of various
 ![components](../../static/img/components.png)
 
 For the usage of the SHOGun-Web-GIS in particular two components are important:
-- [Admin-Client](../admin-client/index.md)
-- [GIS-Client](../gis-client/index.md)
+- [Admin-Client](../2_admin-client/index.md)
+- [GIS-Client](../3_gis-client/index.md)
 
-The [Admin-Client](../admin-client/index.md) component is basically an UI for handling SHOGun entities like users, applications, and layers. Whereas the [GIS-Client](../gis-client/index.md) represents a created instance from the admin client.
+The [Admin-Client](../2_admin-client/index.md) component is basically an UI for handling SHOGun entities like users, applications, and layers. Whereas the [GIS-Client](../3_gis-client/index.md) represents a created instance from the admin client.

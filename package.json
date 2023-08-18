@@ -16,10 +16,11 @@
   "dependencies": {
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/preset-classic": "^2.4.1",
-    "clsx": "^1.2.1"
+    "chalk": "^5.3.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.1"
+    "@docusaurus/module-type-aliases": "2.4.1",
+    "@playwright/test": "^1.37.0"
   },
   "browserslist": {
     "production": [

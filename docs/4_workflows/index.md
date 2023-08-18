@@ -71,7 +71,7 @@ sidebar_label: Workflows
 </div>
 </details>
 
-More detailed information about the attributes can be found in the [admin-client documentation](../admin-client/02-subject.md).
+More detailed information about the attributes can be found in the [admin-client documentation](../2_admin-client/02-subject.md).
 
 6. Use the following JSON-script for the *Layertree*-configuration:
 
@@ -331,7 +331,7 @@ The layerId has to be corresponding to the *Subjects*-layerId!
 
 1. Open the Web-GIS client and customize the predefined application according to your needs, for example by loading a new WMS or deselect existing ones. In addition, you could zoom in on a specific map section to change the extent.
 
-2. Use the [Share](../gis-client/06-share.md) tool within your toolbox to share your customized application:
+2. Use the [Share](../3_gis-client/06-share.md) tool within your toolbox to share your customized application:
 
 ![share](../../static/img/share.png)
 
@@ -355,7 +355,7 @@ As long as the layers are available under their URL or within the internal GeoSe
 
 1. Log in to the [Admin-Client](https://shogun2022.intranet.terrestris.de/admin) and authenticate as a admin-user
 
-2. Switch to the content [Subjects](../admin-client/02-subject.md)
+2. Switch to the content [Subjects](../2_admin-client/02-subject.md)
 
 3. Click the ![upload-subject](../../static/img/upload_subject.png) button and upload a geoTIFF or ShapeFile. Alternatively the files can also be added via Drag&Drop onto the upload button.
 
@@ -365,8 +365,8 @@ The ShapeFile data need to be zipped.
 
 :::
 
-4. A new [Subject](../admin-client/02-subject.md) will be added to the list of existing ones
+4. A new [Subject](../2_admin-client/02-subject.md) will be added to the list of existing ones
 
-5. Switch to the content [Instance](../admin-client/01-instance.md) and edit the **layertree** configuration
+5. Switch to the content [Instance](../2_admin-client/01-instance.md) and edit the **layertree** configuration
 
 6. Add a new layer to the **layertree** and link the layer with the **LayerId** corresponding to the **Subjects LayerId**
