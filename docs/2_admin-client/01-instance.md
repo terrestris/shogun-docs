@@ -230,7 +230,7 @@ A `Layer group` can also be part of the `children`-array. In this case another h
 
 :::caution
 
-The layerId has to be corresponding to the *[Subject](../admin-client/02-subject.md)s*-layerId!
+The layerId has to be corresponding to the *[Subject](../2_admin-client/02-subject.md)s*-layerId!
 
 :::
 
@@ -241,14 +241,14 @@ This is a full list of parameters that can be edited:
 |`title`|Layer- or group name displayed within the layer tree. If not set, the layer name of the internal geoserver will be used|'My base layers'|false|
 |`checked`|Defines whether a layer or all layers within a layer group shall be visible initially|true|false|
 |`children`|Array of layer and layer group|[{'title': 'layer 1', 'checked': true, 'layerId':1 }]|false|
-|`layerId`|LayerId corresponding to the LayerId of the [Subject](../admin-client/02-subject.md)|1|true|
+|`layerId`|LayerId corresponding to the LayerId of the [Subject](../2_admin-client/02-subject.md)|1|true|
 
 <!-- You can find an illustrative example of how to change the name or initial visibility of a layer in the following video:
 <ReactPlayer controls width='max' height='max' url='/shogun-docs/videos/admin-client-layertree.mp4' /> -->
 
 ## Layer configuration
 
-Within the layer configuration window, predefined layer settings from the [Subjects](../admin-client/02-subject.md) section can be overwritten and customized for the particular application.
+Within the layer configuration window, predefined layer settings from the [Subjects](../2_admin-client/02-subject.md) section can be overwritten and customized for the particular application.
 
 Each layer to be modified is an object within a array:
 ```
@@ -278,20 +278,20 @@ This is a full list of parameters that can be edited:
 
 |Key|Description|Example|Required|
 |---|---|---|---|
-|`layerId`|LayerId corresponding to the LayerId of the [Subject](../admin-client/02-subject.md)|1|true|
-|`clientConfig -> hoverable`|see [Client Configuration](../admin-client/02-subject.md)|
-|`clientConfig -> maxResolution`|see [Client Configuration](../admin-client/02-subject.md)|
-|`clientConfig -> minResolution`|see [Client Configuration](../admin-client/02-subject.md)|
-|`clientConfig -> opacity`|see [Client Configuration](../admin-client/02-subject.md)|
-|`clientConfig -> propertyConfig`|see [Client Configuration](../admin-client/02-subject.md)|
-|`clientConfig -> searchable`|see [Client Configuration](../admin-client/02-subject.md)|
-|`clientConfig -> searchConfig`|see [Client Configuration](../admin-client/02-subject.md)|
-|`sourceConfig -> requestParams`|see [Source Configuration](../admin-client/02-subject.md)|
-|`sourceConfig -> resolutions`|see [Source Configuration](../admin-client/02-subject.md)|
-|`sourceConfig -> tileOrigin`|see [Source Configuration](../admin-client/02-subject.md)|
-|`sourceConfig -> tileSize`|see [Source Configuration](../admin-client/02-subject.md)|
-|`sourceConfig -> url`|see [Source Configuration](../admin-client/02-subject.md)|
-|`sourceConfig -> useBearerToken`|see [Source Configuration](../admin-client/02-subject.md)|
+|`layerId`|LayerId corresponding to the LayerId of the [Subject](../2_admin-client/02-subject.md)|1|true|
+|`clientConfig -> hoverable`|see [Client Configuration](../2_admin-client/02-subject.md)|
+|`clientConfig -> maxResolution`|see [Client Configuration](../2_admin-client/02-subject.md)|
+|`clientConfig -> minResolution`|see [Client Configuration](../2_admin-client/02-subject.md)|
+|`clientConfig -> opacity`|see [Client Configuration](../2_admin-client/02-subject.md)|
+|`clientConfig -> propertyConfig`|see [Client Configuration](../2_admin-client/02-subject.md)|
+|`clientConfig -> searchable`|see [Client Configuration](../2_admin-client/02-subject.md)|
+|`clientConfig -> searchConfig`|see [Client Configuration](../2_admin-client/02-subject.md)|
+|`sourceConfig -> requestParams`|see [Source Configuration](../2_admin-client/02-subject.md)|
+|`sourceConfig -> resolutions`|see [Source Configuration](../2_admin-client/02-subject.md)|
+|`sourceConfig -> tileOrigin`|see [Source Configuration](../2_admin-client/02-subject.md)|
+|`sourceConfig -> tileSize`|see [Source Configuration](../2_admin-client/02-subject.md)|
+|`sourceConfig -> url`|see [Source Configuration](../2_admin-client/02-subject.md)|
+|`sourceConfig -> useBearerToken`|see [Source Configuration](../2_admin-client/02-subject.md)|
 
 ## Configure Tools
 
