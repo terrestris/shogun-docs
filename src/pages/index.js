@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
+import Translate, {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -15,8 +16,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/overview/">
-            Documentation
+            to="docs/gis-client">
+            <Translate>Manual</Translate>
           </Link>
         </div>
       </div>
@@ -38,9 +39,9 @@ export default function Home() {
           <p></p>
           <div />
             <p>
-              Welcome to the <b>SHOGun</b>-Manual.<br/>
+              <Translate>Welcome to the SHOGun-Manual.
               This manual is designed to give a comprehensive overview of the functionalities
-              of the <b>SHOGun</b>-Web-GIS application based on the Userstories.
+              of the SHOGun-Web-GIS application.</Translate>
             </p>
             <h2>Authors:</h2>
             <ul class="authors-list">

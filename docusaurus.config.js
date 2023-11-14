@@ -8,11 +8,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'SHOGun',
   tagline: 'Documentation',
-  favicon: 'img/shogun_logo.png',
+  favicon: './img/shogun_logo.png',
 
   // Set the production url of your site here
   url: 'http://localhost/',
-  baseUrl: '/shogun-docs/',
+  baseUrl: 'shogun-docs',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -25,10 +25,18 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   locales: ['en'],
-  // },
+i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de'],
+    localeConfigs: {
+      en: {
+        label: 'English'
+      },
+      de: {
+        label: 'Deutsch'
+      },
+    },
+  },
 
   presets: [
     [
@@ -50,23 +58,27 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'src/images/shogun_logo.png',
+      image: './img/shogun_logo.png',
       navbar: {
-        // title: 'Web-GIS',
+        title: 'SHOGun',
         logo: {
           alt: 'SHOGun logo',
-          src: 'img/shogun_logo.png',
+          src: './img/shogun_logo.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Manual',
           },
           {
             href: 'https://github.com/terrestris/shogun-docker',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            type: 'localeDropdown',
             position: 'right',
           },
         ],
