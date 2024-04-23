@@ -43,11 +43,14 @@ export default function Home() {
               This manual is designed to give a comprehensive overview of the functionalities
               of the SHOGun-Web-GIS application.</Translate>
             </p>
-            <h2>Authors:</h2>
+            <h2><Translate>Authors</Translate>:</h2>
             <ul class="authors-list">
               <li>
                 Fritz Höing (<a href="mailto:hoeing@terrestris.de?subject=SHOGun-Manual">hoeing@terrestris.de</a>)
               </li>
+              <li>
+                Verena Diewald (<a href="mailto:diewald@terrestris.de?subject=SHOGun-Manual">diewald@terrestris.de</a>)
+              </li> 
               <li>
                 Arnulf B. Christl (<a href="mailto:christl@terrestris.de?subject=SHOGun-Manual">christl@terrestris.de</a>)
               </li>
