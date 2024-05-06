@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Admin-Client": {
+    "message": "Admin-Client",
+    "description": "The label for category Admin-Client in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GIS-Client": {
+    "message": "GIS-Client",
+    "description": "The label for category GIS-Client in sidebar tutorialSidebar"
+  }
+}
