@@ -1,0 +1,136 @@
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_REGISTRY: docker-public.terrestris.de/terrestris
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+
+      # Popular action to deploy to GitHub Pages:
+      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Build output to publish to the `gh-pages` branch:
+          publish_dir: ./build
+          # The following lines assign commit authorship to the official
+          # GH-Actions bot for deploys to `gh-pages` branch:
+          # https://github.com/actions/checkout/issues/13#issuecomment-724415212
+          # The GH actions bot is used by default if you didn't specify the two fields.
+          # You can swap them out with your own user credentials.
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+    
+  create_and_push_image:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources 🔰
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js 🧮
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Cache Node.js modules 💾
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
+
+    - name: Install dependencies ⏬
+      run: npm ci
+
+    - name: Semantic Release 🚀
+      uses: cycjimmy/semantic-release-action@v4
+      id: semantic
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        semantic_version: 23
+    
+    - name: Login to Nexus ⌨️
+      uses: docker/login-action@v1
+      with:
+        registry: ${{ env.DOCKER_REGISTRY }}
+        username: ${{ secrets.NEXUS_USERNAME }}
+        password: ${{ secrets.NEXUS_PASSWORD }}
+
+    - name: Build shogun-gis-client-docs docker image (latest) 🏗️
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: Dockerfile.gis.client
+        tags: |
+          ${{ env.DOCKER_REGISTRY }}/shogun-gis-client-docs:latest
+        load: true
+
+    - name: Build shogun-gis-client-docs docker image (version) 🏗️
+      if: steps.semantic.outputs.new_release_published == 'true'
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: Dockerfile.gis.client
+        tags: |
+          ${{ env.DOCKER_REGISTRY }}/shogun-gis-client-docs:${{ steps.semantic.outputs.new_release_version }}
+        load: true
+
+    - name: Push shogun-gis-client-docs docker image to Nexus (latest) 📠
+      run: |
+        docker push ${{ env.DOCKER_REGISTRY }}/shogun-gis-client-docs:latest
+
+    - name: Push shogun-gis-client-docs docker image to Nexus (version) 📠
+      if: steps.semantic.outputs.new_release_published == 'true'
+      run: |
+        docker push ${{ env.DOCKER_REGISTRY }}/shogun-gis-client-docs:${{ steps.semantic.outputs.new_release_version }}
+
+    - name: Build shogun-admin-client-docs image (latest) 🏗️
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: Dockerfile.admin.client
+        tags: |
+          ${{ env.DOCKER_REGISTRY }}/shogun-admin-client-docs:latest
+        load: true
+
+    - name: Build shogun-admin-client-docs docker image (version) 🏗️
+      if: steps.semantic.outputs.new_release_published == 'true'
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: Dockerfile.admin.client
+        tags: |
+          ${{ env.DOCKER_REGISTRY }}/shogun-admin-client-docs:${{ steps.semantic.outputs.new_release_version }}
+        load: true
+
+    - name: Push shogun-admin-client-docs docker image to Nexus (latest) 📠
+      run: |
+        docker push ${{ env.DOCKER_REGISTRY }}/shogun-admin-client-docs:latest
+    
+    - name: Push shogun-admin-client-docs docker image to Nexus (version) 📠
+      if: steps.semantic.outputs.new_release_published == 'true'
+      run: |
+        docker push ${{ env.DOCKER_REGISTRY }}/shogun-admin-client-docs:${{ steps.semantic.outputs.new_release_version }}

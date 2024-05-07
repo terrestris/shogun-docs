@@ -1,4 +1,4 @@
-FROM node:16.15.1-alpine as build
+FROM node:20.12.1-alpine3.19 AS build
 
 WORKDIR /app
 
@@ -8,10 +8,13 @@ COPY package-lock.json ./
 RUN npm ci
 
 COPY . ./
+RUN rm -rf /app/docs/gis-client
+
+COPY docusaurus.admin.config.js ./docusaurus.config.js
 
 RUN npm run build
 
-FROM nginx:1.24.0-alpine
+FROM nginx:1.25.3-alpine-slim
 
 COPY --from=build /app/build /usr/share/nginx/html
 
