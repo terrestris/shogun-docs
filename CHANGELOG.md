@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/terrestris/shogun-docs/compare/v1.0.0...v1.0.1) (2024-05-07)
+
+
+### Bugfixes
+
+* fix dockerfiles ([ddf6683](https://github.com/terrestris/shogun-docs/commit/ddf66835162565f3624ba227654d2b97ea458497))
+
 ## 1.0.0 (2024-05-07)
 
 
