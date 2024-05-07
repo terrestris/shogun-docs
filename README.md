@@ -3,6 +3,7 @@
 ### nginx
 Set the nginx location to `/shogun-gis-docs/` or `/shogun-admin-docs/` respectively.
 
+
 # ToDo's
 - Embed Videos again (need to be recorded first)
 
