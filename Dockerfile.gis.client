@@ -10,6 +10,8 @@ RUN npm ci
 COPY . ./
 RUN rm -rf /app/docs/admin-client
 
+COPY docusaurus.gis.config.js ./docusaurus.config.js
+
 RUN npm run build
 
 FROM nginx:1.25.3-alpine-slim
