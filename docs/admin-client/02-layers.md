@@ -271,6 +271,15 @@ This field defines the source of the topic in JSON format. The data structure di
 }
 ```
 
+```
+{
+  "url": "https://ows.terrestris.de/osm-gray/service?",
+  "layerNames": "OSM-WMS",
+  "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap contributors</a>",
+  "useBearerToken": false
+}
+```
+
 This is a complete list of the parameters that can be set:
 
 |Key|Description|Example|Required|

@@ -160,7 +160,7 @@ This is a complete list of the parameters that can be edited:
 
 ## Layer configuration
 
-In the Layer configuration window, predefined layer settings from the [layers configuration](../admin-client/layers#configuration) 
+In the Layer configuration window, predefined layer settings from the [layers configuration](../admin-client/layers#configuration) and the [layers datasource](../admin-client/layers#datasource) 
  section can be overwritten and adapted to the respective application.
 
 Each layer to be changed is an object within an array:
@@ -186,7 +186,14 @@ Each layer to be changed is an object within an array:
   }
 ]
 ```
-The complete list of parameters that can be edited can be found in chapter [layers configuration](../admin-client/layers#configuration) 
+
+This is a full list of parameters that can be edited:
+
+|Key|Description|Example|Required|
+|---|---|---|---|
+|`layerId`|LayerId corresponding to the LayerId of the [layer](../admin-client/layers)|1|true|
+|`clientConfig`|see full list of clientConfig parameters in [layers configuration](../admin-client/layers#configuration)|
+|`sourceConfig`|see full list of sourceConfig parameters in [layers datasource](../admin-client/layers#datasource)|
 
 ## Configure tools
 

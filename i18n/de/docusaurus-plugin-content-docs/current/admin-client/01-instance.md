@@ -185,7 +185,13 @@ Jede zu ändernde Ebene ist ein Objekt innerhalb eines Arrays:
   }
 ]
 ```
-Die vollständige Liste der Parameter, die editiert werden können, findet sich im Kapitel [Themen-Konfiguration](../admin-client/layers#konfiguration)
+Dies ist die vollständige Liste der Parameter, die editiert werden können:
+
+|Schlüssel|Beschreibung|Beispiel|Benötigt|
+|---|---|---|---|
+|`layerId`|LayerId, die der Id des [Themas](../admin-client/layers) entspricht|1|true|
+|`clientConfig`|siehe vollständige Liste der clientConfig-Parameter in [Themen-Konfiguration](../admin-client/layers#konfiguration)|
+|`sourceConfig`|siehe vollständige Liste der clientConfig-Parameter in [Themen-Datenquelle](../admin-client/layers#datenquelle)|
 
 ## Konfiguration von Werkzeugen
 

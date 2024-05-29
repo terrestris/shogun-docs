@@ -269,6 +269,14 @@ Dieses Feld definiert die Quelle des Themas im JSON-Format. Je nach Art des Laye
   "useBearerToken": true
 }
 ```
+```
+{
+  "url": "https://ows.terrestris.de/osm-gray/service?",
+  "layerNames": "OSM-WMS",
+  "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap contributors</a>",
+  "useBearerToken": false
+}
+```
 
 Dies ist eine vollständige Liste der Parameter, die gesetzt werden können:
 
