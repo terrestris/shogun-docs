@@ -194,13 +194,122 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
 ```
 [
   {
+    "name": "measure_tools",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "measure_tools_distance",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "measure_tools_area",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_point",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_line",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_polygon",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_circle",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_rectangle",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_annotation",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_modify",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_upload",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_download",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_delete",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "draw_tools_style",
+    "config": {
+      "visible": false
+    }
+  },
+  {
+    "name": "feature_info",
+    "config": {
+      "visible": true,
+      "activeCopyTools": []
+    }
+  },
+  {
+    "name": "print",
+    "config": {
+      "visible": true
+    }
+  },
+  {
     "name": "tree",
     "config": {
       "visible": true
     }
   },
   {
-    "name": "feature_info",
+    "name": "permalink",
+    "config": {
+      "visible": true
+    }
+  },
+  {
+    "name": "language_selector",
     "config": {
       "visible": false
     }
@@ -209,8 +318,7 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
     "name": "search",
     "config": {
       "engines": [
-        "nominatim",
-        "solr"
+        "nominatim"
       ]
     }
   }
