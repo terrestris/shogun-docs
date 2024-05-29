@@ -61,7 +61,7 @@ i18n: {
       // Replace with your project's social card
       image: './img/shogun_logo.png',
       navbar: {
-        title: 'SHOGun',
+        title: 'SHOGun Admin Client',
         logo: {
           alt: 'SHOGun logo',
           src: './img/shogun_logo.png',
