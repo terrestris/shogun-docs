@@ -1,6 +1,6 @@
-# Auswahl Sprache
+# Language selection
 ***
-Mit dem Sprachwahlschalter können Sie die Sprache der Anwendung umschalten.
+You can use the language selector switch to change the language of the application.
 
 
 
