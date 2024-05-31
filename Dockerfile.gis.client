@@ -10,8 +10,11 @@ RUN npm ci
 COPY . ./
 RUN rm -rf /app/docs/admin-client
 RUN rm  /app/docusaurus.config.js
+RUN rm -rf /app/src/pages/
 
 COPY docusaurus.gis.config.js ./docusaurus.config.js
+COPY /src/pages/index.gis.client.js ./app/src/pages/index.js
+COPY /src/pages/index.module.gis.client.css ./app/src/pages/index.module.css
 
 RUN npm run build
 
