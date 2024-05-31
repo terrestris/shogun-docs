@@ -1,3 +1,15 @@
+## [1.1.0](https://github.com/terrestris/shogun-docs/compare/v1.0.2...v1.1.0) (2024-05-31)
+
+
+### Dependencies
+
+* add complete tools config example ([1fc9930](https://github.com/terrestris/shogun-docs/commit/1fc9930f01c00e9466c6a2cdf0cae9818f420ac1))
+
+
+### Features
+
+* content for admin client documentation ([22358af](https://github.com/terrestris/shogun-docs/commit/22358afd6cc96db805525016b23c3359fdd1de84))
+
 ## [1.0.2](https://github.com/terrestris/shogun-docs/compare/v1.0.1...v1.0.2) (2024-05-07)
 
 
