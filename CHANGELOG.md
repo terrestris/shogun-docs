@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/terrestris/shogun-docs/compare/v1.1.0...v1.1.1) (2024-07-30)
+
+
+### Bugfixes
+
+* fixes base URL ([150b3a5](https://github.com/terrestris/shogun-docs/commit/150b3a5ef584e65efe94c9971dbe0996b220e4ce))
+
 ## [1.1.0](https://github.com/terrestris/shogun-docs/compare/v1.0.2...v1.1.0) (2024-05-31)
 
 
