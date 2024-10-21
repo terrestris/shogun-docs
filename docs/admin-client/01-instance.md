@@ -75,6 +75,7 @@ This is a complete list of the parameters that can be edited:
 |`theme -> secondaryColor`|Determines the colour when hovering over text elements and buttons|'#ffc0cb'|false|
 |`theme -> complementaryColor`|Defines the font colour of text elements in the header and footer|'#000000'|false|
 |`theme -> logoPath`|URL of the logo that is displayed in the header component|https://my-logo.de/img/my-logo.png|false|
+|`theme -> faviconPath`|URL of the favicon image that is displayed in the browser|https://my-favicon.de/img/my-favicon.png|false|
 |`defaultLanguage`|Determines the default language of the application [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).|'de'|false|
 | `legal -> imprint` | URL for the imprint link | https://www.terrestris.de/de/impressum/ | false |
 | `legal -> imprint` | URL for the contact link | https://www.terrestris.de/de/kontakt/ | false |
@@ -295,7 +296,10 @@ The configuration for the application tools is saved in JSON format in this fiel
     "name": "feature_info",
     "config": {
       "visible": true,
-      "activeCopyTools": []
+      "activeCopyTools": [
+       "COPY_AS_GEOJSON", 
+       "COPY_AS_OBJECT"
+     ]
     }
   },
   {
@@ -307,7 +311,12 @@ The configuration for the application tools is saved in JSON format in this fiel
   {
     "name": "tree",
     "config": {
-      "visible": true
+      "visible": true,
+      "showLegends": true,
+      "uploadTools": [
+         "addWMS",
+         "dataUpload"
+      ]
     }
   },
   {
@@ -333,14 +342,21 @@ The configuration for the application tools is saved in JSON format in this fiel
 ]
 ```
 
-Each available tool from the toolbox is recorded in this document. If you set the visibility of a tool to 'true', it will be made available in the Web GIS application. Please note that some tools also depend on other parameters (e.g. the query capability of a layer).
+Each available tool from the toolbox is recorded in this document. If you set the visibility of a tool to 'true', it will be made available in the Web GIS application. Some tools have further configuration options, such as the `tree` or the `feature_info`.
+
+Please note that some tools also depend on other parameters (e.g. the query capability of a layer).
 
 This is a complete list of the parameters that can be edited:
 
-|Key|Description|
-|---|---|
-|`name`|Name of the tool. The parameter should not be changed|
-|`config -> visible`|Defines the visibility of a specific tool within the Web GIS application|
+|Key|Tool|Description|
+|---|---|---|
+|`name`|all|Name of the tool. The parameter should not be changed|
+|`config -> visible`|all|Defines the visibility of a specific tool within the Web GIS application|
+|`config -> activeCopyTools`|feature_info|Defines if the activeCopyTools for copying a featureInfo result to clipboard are present within the UI|
+|`config -> uploadTools`|tree|Defines if the `addWMS` and `uploadData` buttons are present within the layertree|
+|`config -> showLegends`|tree|If this parameter is set to true, the legends for a layer in the layertree are shown by default if a layer is activated|
+|`config -> engines`|search|Defines which search engine should be used, nominatim is default|
+
 
 Important: If you leave the configuration empty, all tools are available by default. As soon as a tool is added to the configuration, all other tools are no longer available until they are also explicitly added.
 

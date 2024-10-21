@@ -75,6 +75,7 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |`theme -> secondaryColor`|Bestimmt die Farbe beim hovern über Textelemente und Schaltflächen|'#ffc0cb'|false|
 |`theme -> complementaryColor`|Definiert die Schriftfarbe von Textelementen in der Kopf- und Fußzeile|'#000000'|false|
 |`theme -> logoPath`|URL des Logos, das in der Kopfkomponente angezeigt wird|https://my-logo.de/img/my-logo.png|false|
+|`theme -> faviconPath`|URL des Favicon-Image, das im Browser angezeigt wird|https://my-favicon.de/img/my-favicon.png|false|
 |`defaultLanguage`|Bestimmt die Default-Sprache der Applikation [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).|'de'|false|
 | `legal -> imprint` | URL für den Impressum-Link | https://www.terrestris.de/de/impressum/ | false |
 | `legal -> imprint` | URL für den Kontakt-Link | https://www.terrestris.de/de/kontakt/ | false |
@@ -293,7 +294,10 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
     "name": "feature_info",
     "config": {
       "visible": true,
-      "activeCopyTools": []
+      "activeCopyTools": [
+       "COPY_AS_GEOJSON", 
+       "COPY_AS_OBJECT"
+     ]
     }
   },
   {
@@ -305,7 +309,11 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
   {
     "name": "tree",
     "config": {
-      "visible": true
+      "visible": true,
+      "uploadTools": [
+         "addWMS",
+         "dataUpload"
+      ]
     }
   },
   {
@@ -331,7 +339,9 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
 ]
 ```
 
-Jedes verfügbare Werkzeug aus der Toolbox wird in diesem Dokument aufgezeichnet. Wenn Sie die Sichtbarkeit eines Werkzeugs auf `true` setzen, wird es in der Web-GIS-Anwendung verfügbar gemacht. Bitte beachten Sie, dass einige Werkzeuge auch von anderen Parametern abhängen (z.B. von der Abfragefähigkeit eines Layers).
+Jedes verfügbare Werkzeug aus der Toolbox wird in diesem Dokument aufgezeichnet. Wenn Sie die Sichtbarkeit eines Werkzeugs auf `true` setzen, wird es in der Web-GIS-Anwendung verfügbar gemacht. Manche Werkzeuge haben weiterführende Konfigurationsoptionen wie beispielsweise der `tree` oder der `feature_info`.
+
+Bitte beachten Sie, dass einige Werkzeuge auch von anderen Parametern abhängen (z.B. von der Abfragefähigkeit eines Layers).
 
 Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 
@@ -339,6 +349,16 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |---|---|
 |`name`|Name des Tools. Der Parameter sollte nicht geändert werden|
 |`config -> visible`|Legt die Sichtbarkeit eines bestimmten Tools innerhalb der Web-GIS-Anwendung fest|
+
+|Key|Werkzeug|Beschreibung|
+|---|---|---|
+|`name`|alle|Name des Werkzeugs. Der Parameter sollte nicht geändert werden|
+|`config -> visible`|alle|Legt die Sichtbarkeit eines bestimmten Tools innerhalb der Web-GIS-Anwendung fest|
+|`config -> activeCopyTools`|feature_info|Legt die Sichtbarkeit der Kopierwerkzeuge für die Sachdaten-Abfrageergebnisse in der entsprechenden Oberfläche fest|
+|`config -> uploadTools`|tree|Definiert, ob die beiden Schaltflächen `WMS hinzufügen` und `Daten hochladen` im Themenbaum verfügbar sind|
+|`config -> showLegends`|tree|Wenn dieser Parameter auf true gesetzt ist, werden die Legenden für einen Layer im Layertree standardmäßig angezeigt, wenn ein Layer aktiviert ist|
+|`config -> engines`|search|Definiert, welche Suchmaschine für die Suche genutzt wird, nominatim ist der Standard|
+
 
 Wichtig: Wenn Sie die Konfiguration leer lassen, sind standardmäßig alle Werkzeuge verfügbar. Sobald ein Werkzeug zur Konfiguration hinzugefügt wird, sind alle anderen Werkzeuge nicht mehr verfügbar, bis sie ebenfalls explizit hinzugefügt werden.
 
