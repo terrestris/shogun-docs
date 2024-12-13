@@ -293,4 +293,4 @@ This is a complete list of the parameters that can be set:
 |`requestParams`|Query parameters that are passed to the map server when a layer is queried, e.g. via GetMap. This can be useful if you want to pass server-specific parameters|'\{\"transparent\": true\}'|false|
 |`resolutions`|The list of resolutions for which the layer is to be requested|'[2445.9849047851562, 1222.9924523925781, 611.4962261962891]'|false|
 |`tileOrigin`|Origin of the tile grid. Normally you do not want to define your own value||false|
-|`tileSize`|Defines the tile size. Default is 256|512|false|
+|`tileSize`|Defines the tile size. Default is 256. Note that, tileSize only applies if 'resolutions' and 'tileOrigin' are set at the same time|512|false|

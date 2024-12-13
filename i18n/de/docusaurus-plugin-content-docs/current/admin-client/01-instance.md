@@ -69,16 +69,27 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |`mapView -> extent`|Die maximale Ausdehnung der Karte (in WGS84)|'[2.5683045738288137, 45.429089001638076, 19.382621082401887, 57.283993958205926]'|false|
 |`mapView -> projection`|Koordinatenprojektion der Karte|'EPSG:25832'|false|
 |`mapView -> resolutions`|Die Liste der Auflösungen der Karte|'[2445.9849047851562, 1222.9924523925781, 611.4962261962891]'|false|
-| `mapView → crsDefinitions` | Die Liste der CRS-Definitionen im proj4-Format, die zusätzlich in der Anwendung registriert werden sollen. | \{ <br/>'crsCode': 'EPSG:25832',<br/>'definition': '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'<br/>\} | false |
+|`mapView → crsDefinitions`|Die Liste der CRS-Definitionen im proj4-Format, die zusätzlich in der Anwendung registriert werden sollen.|\{ <br/>'crsCode': 'EPSG:25832',<br/>'definition': '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'<br/>\}|false|
 |`description`|Beschreibung der Anwendung, die auf der Startseite angezeigt werden soll|'My Web-GIS'|false|
 |`theme -> primaryColor`|Bestimmt die Hintergrundfarbe des Kopf- und Fußzeilenelements|'#444444'|false|
 |`theme -> secondaryColor`|Bestimmt die Farbe beim hovern über Textelemente und Schaltflächen|'#ffc0cb'|false|
 |`theme -> complementaryColor`|Definiert die Schriftfarbe von Textelementen in der Kopf- und Fußzeile|'#000000'|false|
 |`theme -> logoPath`|URL des Logos, das in der Kopfkomponente angezeigt wird|https://my-logo.de/img/my-logo.png|false|
 |`defaultLanguage`|Bestimmt die Default-Sprache der Applikation [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).|'de'|false|
-| `legal -> imprint` | URL für den Impressum-Link | https://www.terrestris.de/de/impressum/ | false |
-| `legal -> imprint` | URL für den Kontakt-Link | https://www.terrestris.de/de/kontakt/ | false |
-| `legal -> privacy` | URL für den Datenschutz-Link | https://www.terrestris.de/de/datenschutzerklaerung/ | false |
+|`printApp`|Der Benutzer hat die Möglichkeit, Druckausgabe pro Anwendung zu konfigurieren|'printApp':'test'|false|
+|`legal -> imprint` | URL für den Impressum-Link|https://www.terrestris.de/de/impressum/|false|
+|`legal -> imprint`|URL für den Kontakt-Link|https://www.terrestris.de/de/kontakt/|false|
+|`legal -> privacy`|URL für den Datenschutz-Link|https://www.terrestris.de/de/datenschutzerklaerung/|false|
+|`mapInteractions` |Die der Karte hinzugefügten Interaktionsmöglichkeiten|'DragPan','MouseWheelZoom'|false|
+|`mapInteractions -> DoubleClickZoom`|Zoomen Sie auf die Karte, indem Sie auf die Karte doppelklicken|'DoubleClickZoom'|false|
+|`mapInteractions -> DragPan`|Schwenken die Karte durch Ziehen der Karte|'DragPan'|false|
+|`mapInteractions -> DragRotate`|Drehen die Karte durch Klicken und Ziehen auf der Karte|'DragRotate'|false|
+|`mapInteractions -> DragZoom`|Zoomen auf die Karte, indem Sie auf die Karte klicken und sie ziehen|'DragZoom'|false|
+|`mapInteractions -> KeyboardZoom`|Vergrößern die Karte mit den Tasten + und -. Beachten Sie, dass die Tasten nur verwendet werden können, wenn der Browserfokus auf dem Element liegt, an das die Tastaturereignisse angehängt sind (standardmäßig ist dies das Karten-Div)|'KeyboardZoom'|false|
+|`mapInteractions -> KeyboardPan`|Schwenken die Karte mit den Pfeiltasten. Beachten Sie, dass die Tasten nur verwendet werden können, wenn der Browserfokus auf dem Element liegt, an das die Tastaturereignisse angehängt sind (standardmäßig ist dies das Karten-Div)|'KeyboardPan'|false|
+|`mapInteractions -> MouseWheelZoom`|Vergrößern die Karte durch Drehen des Mausrads|'MouseWheelZoom'|false|
+|`mapInteractions -> PinchRotate`|Drehen die Karte, indem Sie sie mit zwei Fingern auf einem Touchscreen drehen|'PinchRotate'|false|
+|`mapInteractions -> PinchZoom`|Vergrößern die Karte, indem Sie auf einem Touchscreen mit zwei Fingern ziehen|'PinchZoom'|false|
 
 ## Themenbaum
 
@@ -305,6 +316,8 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
   {
     "name": "tree",
     "config": {
+      "metadataVisible": false,
+      "layerIconsVisible": true,
       "visible": true
     }
   },
@@ -339,6 +352,8 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |---|---|
 |`name`|Name des Tools. Der Parameter sollte nicht geändert werden|
 |`config -> visible`|Legt die Sichtbarkeit eines bestimmten Tools innerhalb der Web-GIS-Anwendung fest|
+|`config -> metaVisible`|Konfiguriert pro Anwendung Eigenschaften im Kontextmenü des Layer-Trees. Ist standardmäßig „sichtbar“ context menu|
+|`config -> layerIconsVisible`|konfiguriert pro Anwendung die Sichtbarkeit der pro Layer angezeigten Symbole, um anzuzeigen, wo sie schwebend, editierbar und/oder durchsuchbar sind. Ist standardmäßig „nicht sichtbar“|
 
 Wichtig: Wenn Sie die Konfiguration leer lassen, sind standardmäßig alle Werkzeuge verfügbar. Sobald ein Werkzeug zur Konfiguration hinzugefügt wird, sind alle anderen Werkzeuge nicht mehr verfügbar, bis sie ebenfalls explizit hinzugefügt werden.
 
