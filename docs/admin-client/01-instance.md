@@ -46,6 +46,17 @@ The configuration of the application is saved in JSON format in this field. Each
       0.07
     ]
   },
+  "mapInteractions": [
+    "DragRotate",
+    "DragPan",
+    "DoubleClickZoom",
+    "PinchRotate",
+    "PinchZoom",
+    "KeyboardPan",
+    "KeyboardZoom",
+    "MouseWheelZoom",
+    "DragZoom"
+  ],
   "description": "The default application",
   "legal": {
     "contact": "https://www.terrestris.de/de/kontakt/",
@@ -56,7 +67,8 @@ The configuration of the application is saved in JSON format in this field. Each
     "primaryColor": "#008CD2",
     "secondaryColor": "#D1007F",
     "complementaryColor": "#EEEEEE"
-  }
+  },
+  "printApp": "test"
 }
 ```
 
@@ -80,16 +92,16 @@ This is a complete list of the parameters that can be edited:
 |`legal -> imprint`|URL for the imprint link|https://www.terrestris.de/de/impressum/|false|
 |`legal -> imprint`|URL for the contact link|https://www.terrestris.de/de/kontakt/|false|
 |`legal -> privacy`|URL for the privacy link|https://www.terrestris.de/de/datenschutzerklaerung/|false|
-|`mapInteractions` |The ways of interacting added to the map|'DragPan','MouseWheelZoom'|false|
-|`mapInteractions -> DoubleClickZoom`|Zoom to the map by double-clicking on the map|'DoubleClickZoom'|false|
-|`mapInteractions -> DragPan`|Pan the map by dragging the map| 'DragPan'|false|
-|`mapInteractions -> DragRotate`|Rotate the map by clicking and dragging on the map|'DragRotate'|false|
-|`mapInteractions -> DragZoom`|Zoom to the map by clicking and dragging on the map|'DragZoom'|false|
-|`mapInteractions -> KeyboardZoom`|Zoom in on the map using keyboard + and -. Note that, the keys can only be used when browser focus is on the element to which the keyboard events are attached(by default, this is the map div)|'KeyboardZoom'|false|
-|`mapInteractions -> KeyboardPan`|Pan the map using keyboard arrows. Note that, the keys can only be used when browser focus is on the element to which the keyboard events are attached(by default, this is the map div)|'KeyboardPan'|false|
-|`mapInteractions -> MouseWheelZoom`|Zoom in on the map by scrolling the mouse wheel|'MouseWheelZoom'|false|
-|`mapInteractions -> PinchRotate`|Rotate the map by twisting with two fingers on a touch screen|'PinchRotate'|false|
-|`mapInteractions -> PinchZoom`|Zoom in on the map by pinching with two fingers on a touch screen|'PinchZoom'|false|
+|`mapInteractions` |The Openlayers interactions added to the map:|['DragRotate','DragPan', 'DoubleClickZoom', 'PinchRotate', 'PinchZoom', 'KeyboardPan', 'KeyboardZoom', 'MouseWheelZoom', 'DragZoom']|false|
+|`mapInteractions : DoubleClickZoom`|Allows the user to zoom by double-clicking on the map|'DoubleClickZoom'|false|
+|`mapInteractions : DragPan`|Allows the user to pan the map by dragging the map| 'DragPan'|false|
+|`mapInteractions : DragRotate`|Allows the user to rotate the map by clicking and dragging on the map, this interaction is only supported for mouse devices|'DragRotate'|false|
+|`mapInteractions : DragZoom`|Allows the user to zoom the map by clicking and dragging on the map|'DragZoom'|false|
+|`mapInteractions : KeyboardZoom`|Allows the user to zoom the map using keyboard + and -. Note that, the keys can only be used when browser focus is on the element to which the keyboard events are attached(by default, this is the map div)|'KeyboardZoom'|false|
+|`mapInteractions : KeyboardPan`|Allows the user to pan the map using keyboard arrows. Note that, the keys can only be used when browser focus is on the element to which the keyboard events are attached(by default, this is the map div)|'KeyboardPan'|false|
+|`mapInteractions : MouseWheelZoom`|Allows the user to zoom the map by scrolling the mouse wheel|'MouseWheelZoom'|false|
+|`mapInteractions : PinchRotate`|Allows the user to rotate the map by twisting with two fingers on a touch screen|'PinchRotate'|false|
+|`mapInteractions : PinchZoom`|Allows the user to zoom the map by pinching with two fingers on a touch screen|'PinchZoom'|false|
 
 ## Layertree
 
@@ -350,12 +362,12 @@ Each available tool from the toolbox is recorded in this document. If you set th
 
 This is a complete list of the parameters that can be edited:
 
-|Key|Description|
-|---|---|
-|`name`|Name of the tool. The parameter should not be changed|
-|`config -> visible`|Defines the visibility of a specific tool within the Web GIS application|
-|`config -> metaVisible`|Configures per application properties in the layer tree context menu. Is 'visible' by default|
-|`config -> layerIconsVisible`|Configures per application, the visibility of icons shown per layer to show where they are hoverable, editable and/or searchable. Is 'not visible' by default|
+|Key|Description|Tool|
+|---|---|---|
+|`name`|Name of the tool. The parameter should not be changed|all|
+|`config -> visible`|Defines the visibility of a specific tool within the Web GIS application|all|
+|`config -> metaVisible`|Defines of an application if the layer properties in the layer context menu is visible. Is 'visible' by default|'tree'|
+|`config -> layerIconsVisible`|Defines if additional icons (if layers are hoverable, editable, searchable) for the layers are shown in the layertree. Is 'not visible' by default|'tree'|
 
 Important: If you leave the configuration empty, all tools are available by default. As soon as a tool is added to the configuration, all other tools are no longer available until they are also explicitly added.
 

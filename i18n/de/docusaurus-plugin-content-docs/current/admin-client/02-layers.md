@@ -291,4 +291,4 @@ Dies ist eine vollständige Liste der Parameter, die gesetzt werden können:
 |`requestParams`|Abfrageparameter, die an den Kartenserver übergeben werden, wenn ein Layer z.B. über GetMap abgefragt wird. Dies kann nützlich sein, wenn Sie serverspezifische Parameter übergeben wollen|'\{\"transparent\": true\}'|false|
 |`resolutions`|Die Liste der Auflösungen, für die der Layer angefordert werden soll|'[2445.9849047851562, 1222.9924523925781, 611.4962261962891]'|false|
 |`tileOrigin`|Ursprung des Kachelrasters. Normalerweise wollen Sie keinen eigenen Wert festlegen||false|
-|`tileSize`|Legt die Kachelgröße fest. Standard ist 256|512. Zu beachten, tileSize gilt nur, wenn gleichzeitig Auflösungen und ein tileOrigin festgelegt sind|false|
+|`tileSize`|Legt die Kachelgröße fest. Standard ist 256|512. Zu beachten ist: tileSize greift nur, wenn gleichzeitig auch die Parameter resolutions und tileOrigin festgelegt sind|false|
