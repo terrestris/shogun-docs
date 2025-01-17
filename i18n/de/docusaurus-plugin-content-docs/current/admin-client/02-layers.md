@@ -91,6 +91,18 @@ Die Struktur von featureInfoFormConfig kann folgendermaßen aussehen:
 {
   "featureInfoFormConfig": [
     {
+      "title": "Testlayer",
+      "children": [
+        {
+          "propertyName": "my_url_attribute",
+          "displayName": "Link",
+          "fieldProps": {
+            "urlDisplayValue": "Link"
+          }
+        }
+      ]
+    },
+    {
       "title": "Basis",
       "children": [
         {

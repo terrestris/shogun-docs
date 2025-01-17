@@ -332,6 +332,7 @@ The configuration for the application tools is saved in JSON format in this fiel
     "config": {
       "metadataVisible": false,
       "layerIconsVisible": true,
+      "showLegends": false,
       "visible": true
     }
   },
@@ -348,10 +349,17 @@ The configuration for the application tools is saved in JSON format in this fiel
     }
   },
   {
+    "name": "map_toolbar",
+    "config": {
+      "visible": true
+    }
+  },
+  {
     "name": "search",
     "config": {
       "engines": [
-        "nominatim"
+        "nominatim",
+        "wfs"
       ]
     }
   }
@@ -366,6 +374,7 @@ This is a complete list of the parameters that can be edited:
 |---|---|---|
 |`name`|Name of the tool. The parameter should not be changed|all|
 |`config -> visible`|Defines the visibility of a specific tool within the Web GIS application|all|
+|`config -> showLegends`|Defines whether legends are visible when a Layer is activated. Is 'not visible' by default|'tree'|
 |`config -> metaVisible`|Defines of an application if the layer properties entry in the layer context menu is visible. Is 'visible' by default|'tree'|
 |`config -> layerIconsVisible`|Defines for an application if additional icons (if layers are hoverable, editable, searchable) for the layers are shown in the layertree. Is 'not visible' by default|'tree'|
 
