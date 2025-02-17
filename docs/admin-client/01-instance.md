@@ -375,7 +375,7 @@ This is a complete list of the parameters that can be edited:
 |`name`|Name of the tool. The parameter should not be changed|all|
 |`config -> visible`|Defines the visibility of a specific tool within the Web GIS application|all|
 |`config -> showLegends`|Defines whether legends are visible when a Layer is activated. Is 'not visible' by default|'tree'|
-|`config -> metaVisible`|Defines of an application if the layer properties entry in the layer context menu is visible. Is 'visible' by default|'tree'|
+|`config -> metadataVisible`|Defines of an application if the layer properties entry in the layer context menu is visible. Is 'visible' by default|'tree'|
 |`config -> layerIconsVisible`|Defines for an application if additional icons (if layers are hoverable, editable, searchable) for the layers are shown in the layertree. Is 'not visible' by default|'tree'|
 |`search -> config -> engines`|Name of the search tools to be used, can now also include wfs|'nomitatim', 'wfs'|
 

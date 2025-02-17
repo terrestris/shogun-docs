@@ -373,7 +373,7 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |`name`|Name des Tools. Der Parameter sollte nicht geändert werden|alle|
 |`config -> visible`|Legt die Sichtbarkeit eines bestimmten Tools innerhalb der Web-GIS-Anwendung fest|alle|
 |`config -> showLegends`||Definiert, ob Legenden sichtbar sind, wenn ein Layer aktiviert wird. Ist standardmäßig „nicht sichtbar“|'tree'|
-|`config -> metaVisible`|Legt pro Applikation fest, ob die Eigenschaften eines Layers im Kontextmenü des Layers sichtbar sind. Ist standardmäßig 'sichtbar'|'tree'|
+|`config -> metadataVisible`|Legt pro Applikation fest, ob die Eigenschaften eines Layers im Kontextmenü des Layers sichtbar sind. Ist standardmäßig 'sichtbar'|'tree'|
 |`config -> layerIconsVisible`|Legt für eine Applikation fest, ob zusätzliche Icons (wenn Layer abfragbar, editierbar, durchsuchbar ist) für die Layer im Layertree angezeigt werden. Ist standardmäßig 'nicht sichtbar'|'tree'|
 
 Wichtig: Wenn Sie die Konfiguration leer lassen, sind standardmäßig alle Werkzeuge verfügbar. Sobald ein Werkzeug zur Konfiguration hinzugefügt wird, sind alle anderen Werkzeuge nicht mehr verfügbar, bis sie ebenfalls explizit hinzugefügt werden.
