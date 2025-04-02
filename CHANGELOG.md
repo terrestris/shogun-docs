@@ -1,3 +1,18 @@
+## [1.1.2](https://github.com/terrestris/shogun-docs/compare/v1.1.1...v1.1.2) (2025-04-02)
+
+
+### Dependencies
+
+* one more change for docs ([9a4db83](https://github.com/terrestris/shogun-docs/commit/9a4db832054f334070128b52c2e614e378da343c))
+* smaller adjustments for additional features ([cc3d06a](https://github.com/terrestris/shogun-docs/commit/cc3d06afa4ff4bce7d2792cea34bde734063fbac))
+* update admin client docs with new features ([4a0ab39](https://github.com/terrestris/shogun-docs/commit/4a0ab3936fdf166a076b7c9c9047a13a600fc49b))
+* updated wrong param name ([fa93d49](https://github.com/terrestris/shogun-docs/commit/fa93d491c3e705051710fce2bfa8d12384b95a04))
+
+
+### Bugfixes
+
+* update sidebar and search config info ([d1e1a96](https://github.com/terrestris/shogun-docs/commit/d1e1a9639bc9ae4fef2b4a2f096f09cfa5fce111))
+
 ## [1.1.1](https://github.com/terrestris/shogun-docs/compare/v1.1.0...v1.1.1) (2024-07-30)
 
 
