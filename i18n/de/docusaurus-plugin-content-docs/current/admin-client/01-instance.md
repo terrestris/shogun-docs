@@ -46,6 +46,17 @@ In diesem Feld wird die Konfiguration der Anwendung im JSON-Format gespeichert. 
       0.07
     ]
   },
+  "mapInteractions": [
+    "DragRotate",
+    "DragPan",
+    "DoubleClickZoom",
+    "PinchRotate",
+    "PinchZoom",
+    "KeyboardPan",
+    "KeyboardZoom",
+    "MouseWheelZoom",
+    "DragZoom"
+  ],
   "description": "The default application",
   "legal": {
     "contact": "https://www.terrestris.de/de/kontakt/",
@@ -56,9 +67,11 @@ In diesem Feld wird die Konfiguration der Anwendung im JSON-Format gespeichert. 
     "primaryColor": "#008CD2",
     "secondaryColor": "#D1007F",
     "complementaryColor": "#EEEEEE"
-  }
+  },
+  "printApp": "test"
 }
 ```
+
 
 Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 
@@ -69,16 +82,27 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |`mapView -> extent`|Die maximale Ausdehnung der Karte (in WGS84)|'[2.5683045738288137, 45.429089001638076, 19.382621082401887, 57.283993958205926]'|false|
 |`mapView -> projection`|Koordinatenprojektion der Karte|'EPSG:25832'|false|
 |`mapView -> resolutions`|Die Liste der Auflösungen der Karte|'[2445.9849047851562, 1222.9924523925781, 611.4962261962891]'|false|
-| `mapView → crsDefinitions` | Die Liste der CRS-Definitionen im proj4-Format, die zusätzlich in der Anwendung registriert werden sollen. | \{ <br/>'crsCode': 'EPSG:25832',<br/>'definition': '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'<br/>\} | false |
+|`mapView → crsDefinitions`|Die Liste der CRS-Definitionen im proj4-Format, die zusätzlich in der Anwendung registriert werden sollen.|\{ <br/>'crsCode': 'EPSG:25832',<br/>'definition': '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'<br/>\}|false|
 |`description`|Beschreibung der Anwendung, die auf der Startseite angezeigt werden soll|'My Web-GIS'|false|
 |`theme -> primaryColor`|Bestimmt die Hintergrundfarbe des Kopf- und Fußzeilenelements|'#444444'|false|
 |`theme -> secondaryColor`|Bestimmt die Farbe beim hovern über Textelemente und Schaltflächen|'#ffc0cb'|false|
 |`theme -> complementaryColor`|Definiert die Schriftfarbe von Textelementen in der Kopf- und Fußzeile|'#000000'|false|
 |`theme -> logoPath`|URL des Logos, das in der Kopfkomponente angezeigt wird|https://my-logo.de/img/my-logo.png|false|
 |`defaultLanguage`|Bestimmt die Default-Sprache der Applikation [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).|'de'|false|
-| `legal -> imprint` | URL für den Impressum-Link | https://www.terrestris.de/de/impressum/ | false |
-| `legal -> imprint` | URL für den Kontakt-Link | https://www.terrestris.de/de/kontakt/ | false |
-| `legal -> privacy` | URL für den Datenschutz-Link | https://www.terrestris.de/de/datenschutzerklaerung/ | false |
+|`printApp`|Der Benutzer hat die Möglichkeit, die Drucktemplates pro Anwendung zu konfigurieren|'printApp':'test'|false|
+|`legal -> imprint` | URL für den Impressum-Link|https://www.terrestris.de/de/impressum/|false|
+|`legal -> imprint`|URL für den Kontakt-Link|https://www.terrestris.de/de/kontakt/|false|
+|`legal -> privacy`|URL für den Datenschutz-Link|https://www.terrestris.de/de/datenschutzerklaerung/|false|
+|`mapInteractions` |Die der Karte hinzugefügten Openlayers Interaktionsmöglichkeiten|['DragRotate','DragPan', 'DoubleClickZoom', 'PinchRotate', 'PinchZoom', 'KeyboardPan', 'KeyboardZoom', 'MouseWheelZoom', 'DragZoom']|false|
+|`mapInteractions : DoubleClickZoom`|Ermöglicht dem Benutzer das Zoomen durch Doppelklick auf die Karte|'DoubleClickZoom'|false|
+|`mapInteractions : DragPan`|Ermöglicht dem Benutzer das Verschieben der Karte durch Ziehen der Karte|'DragPan'|false|
+|`mapInteractions : DragRotate`|Ermöglicht es dem Benutzer, die Karte durch Klicken und Ziehen auf der Karte zu drehen; diese Interaktion wird nur von Mausgeräten unterstützt|'DragRotate'|false|
+|`mapInteractions : DragZoom`|Ermöglicht dem Benutzer das Zoomen der Karte durch Klicken und Ziehen auf der Karte|'DragZoom'|false|
+|`mapInteractions : KeyboardZoom`|Ermöglicht es dem Benutzer, die Karte mit den Tasten + und - zu zoomen. Beachten Sie, dass die Tasten nur verwendet werden können, wenn der Browser-Fokus auf dem Element liegt, dem die Tastaturereignisse zugeordnet sind (standardmäßig ist dies das Karten-Div).|'KeyboardZoom'|false|
+|`mapInteractions : KeyboardPan`|Ermöglicht es dem Benutzer, die Karte mit Tastaturpfeilen zu verschieben. Beachten Sie, dass die Tasten nur verwendet werden können, wenn der Browser-Fokus auf dem Element liegt, dem die Tastaturereignisse zugeordnet sind (standardmäßig ist dies das Karten-Div).|'KeyboardPan'|false|
+|`mapInteractions : MouseWheelZoom`|Ermöglicht dem Benutzer das Zoomen der Karte durch Scrollen mit dem Mausrad|'MouseWheelZoom'|false|
+|`mapInteractions : PinchRotate`|Ermöglicht dem Benutzer das Drehen der Karte durch Drehen mit zwei Fingern auf einem Touchscreen|'PinchRotate'|false|
+|`mapInteractions : PinchZoom`|Ermöglicht dem Benutzer das Zoomen der Karte durch Drücken mit zwei Fingern auf einem Touchscreen|'PinchZoom'|false|
 
 ## Themenbaum
 
@@ -305,6 +329,9 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
   {
     "name": "tree",
     "config": {
+      "metadataVisible": false,
+      "layerIconsVisible": true,
+      "showLegends": false,
       "visible": true
     }
   },
@@ -318,6 +345,12 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
     "name": "language_selector",
     "config": {
       "visible": false
+    }
+  },
+  {
+    "name": "map_toolbar",
+    "config": {
+      "visible": true
     }
   },
   {
@@ -335,10 +368,13 @@ Jedes verfügbare Werkzeug aus der Toolbox wird in diesem Dokument aufgezeichnet
 
 Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 
-|Key|Description|
-|---|---|
-|`name`|Name des Tools. Der Parameter sollte nicht geändert werden|
-|`config -> visible`|Legt die Sichtbarkeit eines bestimmten Tools innerhalb der Web-GIS-Anwendung fest|
+|Key|Description|Werkzeug|
+|---|---|---|
+|`name`|Name des Tools. Der Parameter sollte nicht geändert werden|alle|
+|`config -> visible`|Legt die Sichtbarkeit eines bestimmten Tools innerhalb der Web-GIS-Anwendung fest|alle|
+|`config -> showLegends`||Definiert, ob Legenden sichtbar sind, wenn ein Layer aktiviert wird. Ist standardmäßig „nicht sichtbar“|'tree'|
+|`config -> metadataVisible`|Legt pro Applikation fest, ob die Eigenschaften eines Layers im Kontextmenü des Layers sichtbar sind. Ist standardmäßig 'sichtbar'|'tree'|
+|`config -> layerIconsVisible`|Legt für eine Applikation fest, ob zusätzliche Icons (wenn Layer abfragbar, editierbar, durchsuchbar ist) für die Layer im Layertree angezeigt werden. Ist standardmäßig 'nicht sichtbar'|'tree'|
 
 Wichtig: Wenn Sie die Konfiguration leer lassen, sind standardmäßig alle Werkzeuge verfügbar. Sobald ein Werkzeug zur Konfiguration hinzugefügt wird, sind alle anderen Werkzeuge nicht mehr verfügbar, bis sie ebenfalls explizit hinzugefügt werden.
 

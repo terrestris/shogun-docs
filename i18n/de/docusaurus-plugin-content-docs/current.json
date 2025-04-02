@@ -10,5 +10,9 @@
   "sidebar.tutorialSidebar.category.GIS-Client": {
     "message": "GIS-Client",
     "description": "The label for category GIS-Client in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Serverside-Client-Configurations": {
+    "message": "Serverside-Client-Configurations",
+    "description": "The label for category Serverside-Client-Configurations in sidebar tutorialSidebar"
   }
 }
