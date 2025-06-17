@@ -7,7 +7,9 @@ Unter dem Menüpunkt *Themen* können neue Layer für die Applikationen persisti
 
 Bestehende Themen können durch Klicken in die entsprechende Zeile in der Themenliste geändert werden. Um einen neuen Layer hinzuzufügen, klicken Sie auf den Button "Thema erstellen".
 
-Der Import von Raster- oder Vektordaten erfolgt über den "Thema hochladen"-Button.
+Externe WMS Layer können über die Schaltfläche "WMS Layer hinzufügen" importiert werden.
+
+Der Import von Raster- oder Vektordaten erfolgt über den "Thema hochladen"-Button (wenn konfiguriert).
 
 Sobald ein Thema geändert wurde, kann es gespeichert werden über den "Thema speichern"-Button.
 
@@ -71,11 +73,10 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |`minResolution`|Die Mindestauflösung des Layer (bei welcher Auflösung/Zoomstufe die Ebene sichtbar werden soll)|10000|false|
 |`opacity`|Legt die anfängliche Deckkraft für den Layer in einem Bereich von 0-1 fest.|0.5|false|
 |`propertyConfig`|Wird momentan nicht genutzt||false|
-|`searchable`|Wird momentan nicht genutzt||false|
-|`searchConfig`|Wird momentan nicht genutzt||false|
 |`searchable`|Legt fest, ob der Layer durchsuchbar ist||false|
-|`searchConfig`|Legt fest, welche Attribute bei der Suche durchsuchbar sind ||false|
-|`displayTemplate`|Legt das Anzeigetemplate für die Suchergebnisse fest|`Name: <b>{name}</b>, Adresse: <em>{adresse}</em>`|false|
+|`searchConfig -> attributes`|Legt fest, welche Attribute bei der Suche durchsuchbar sind ||false|
+|`searchConfig -> displayTemplate`|Legt das Anzeigetemplate für die Suchergebnisse fest|`Name: <b>{name}</b>, Adresse: <em>{adresse}</em>`|false|
+|`searchConfig -> resultDrawerConfig`|Definiert die Anzeigevorlage für die detaillierten Suchergebnisse, wenn resultSearchDrawer aktiviert ist|s.u.|false|
 |`featureInfoFormConfig`|Legt fest, welche Attribute in der Anzeige von FeatureInfo angezeigt werden, weitere Details finden sich [hier](#featureinfoformconfig)|[hier](#featureinfoformconfig)|false|
 |`editable`|Legt fest, ob der Layer editierbar ist, gilt nur für interne GeoServer-Layer, die über WFS-T schreibbar sind|true|false|
 |`editFormConfig`|Legt fest, welche Attribute im Editierformular angezeigt werden, weitere Details finden sich [hier](#editformconfig)| [hier](#editformconfig) |false|
@@ -256,6 +257,22 @@ Es gibt insgesamt 8 Ausgabetypen, die hier beschrieben werden:
 |`TEXTAREA`|Kann bei längeren Texten benutzt werden|
 |`UPLOAD`|Bietet für die definierten Upload-Felder die Möglichkeit zum Hochladen an|
 |`REFERENCE_TABLE`|Bietet für 1:n-Attribute eine Konfigurationsmöglichkeit|
+
+### resultDrawerConfig 
+
+Definiert die Anzeigevorlage für die detaillierten Suchergebnisse, wenn resultSearchDrawer aktiviert ist.
+
+```
+    "resultDrawerConfig": {
+      "title": "Test",
+      "children": [
+        {
+          "propertyName": "NAME",
+          "displayName": "Name"
+        }
+      ]
+    }
+```
 
 ## Datenquelle
 

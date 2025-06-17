@@ -1,34 +1,33 @@
 ## Serverside Admin Konfigurationen
 
-A list of global settings for the admin-client which can be configured via the `admin-client-config.js` file:
+This document contains the list of global settings for the admin-client which can be configured via the `admin-client-config.js` file. This file is considered to be accessed by the client from the path `./config/admin-client-config.js`. A template containing all the default values can be found [here](https://github.com/terrestris/shogun-admin/blob/main/assets/fallbackConfig.js).
 
-
-|Name|Beschreibung|Standard|
-|---|---|---|
-|`shogunApplicationConfig -> appPrefix`|Der Pfad zur Anwendung, das Präfix, das in der Adressleiste erscheint, wenn die Anwendung geöffnet ist|'/admin'|
-|`shogunApplicationConfig -> defaultPageSize`|Die Anzahl der angezeigten Einträge pro Seite|10|
-|`shogunApplicationConfig -> path -> modelConfigs`|Der Pfad zu den Modellkonfigurationen auf Ihrem Host|`'/'`|
-|`shogunApplicationConfig -> path -> shogunBase`|Der Pfad zur shogunbase auf Ihrem Rechner|`'/'`|
-|`shogunApplicationConfig -> path -> logo`|Der Pfad zu dem vom Admin-Client verwendeten Logo|null|
-|`security -> keycloak -> enabled`|Konfigurieren, ob keycloak aktiviert ist|true|
-|`Sicherheit -> Keycloak -> Host`|Die URL für den Keycloak-Host|'https://localhost/auth'|
-|`Sicherheit -> Keycloak -> Realm`|Der zu verwendende Keycloak-Realm|``|
-|`security -> keycloak -> clientId`|Die ID des Clients, der den Benutzer zur Authentifizierung anfordert|'shogun-admin'|
-|`security -> keycloak -> authorizedRoles`|Die Liste der Rollen mit Zugriffsrechten|`[]`|
-|`geoserver -> base`|Der Pfad zum Geoserver auf Ihrem Host|`'/'`|
-|`geoserver -> upload -> buttonVisible`|Konfigurieren, ob der Ebenen-Upload-Button sichtbar ist|false|
-|`geoserver -> upload -> workspace`|Der Bereich, der verwendet werden soll, z.B. 'SHOGUN'|null|
-|`geoserver -> upload -> limit`|Der maximal zugewiesene Speicherplatz|200000000 [~200MB]|
-|`Modelle`|Die Liste der verfügbaren Modelle, z.B. Anwendungen, Ebenen, Benutzer usw.|`[]`|
-|`Dashboard -> Nachrichten -> sichtbar`|Konfigurieren, ob die Nachrichten sichtbar sind|true|
-|`Dashboard -> Statistiken -> sichtbar`|Die Sichtbarkeit der Liste der Anwendungsstatistiken|false|
-|`Dashboard -> Anwendungen -> sichtbar`|Die Sichtbarkeit der Liste der im Dashboard verfügbaren Anwendungen|true|
-|`Dashboard -> Ebenen -> sichtbar`|Die Sichtbarkeit der Liste der hochgeladenen Ebenen|true|
-|`Dashboard -> Benutzer -> sichtbar`|Die Sichtbarkeit der Liste der Benutzer im System|wahr|
-|`Navigation -> Allgemein -> Bilddateien -> sichtbar`|Die Liste der Bilddateien, die vom Benutzer hochgeladen wurden|true|
-|`Navigation -> Status -> Metriken -> sichtbar`|Konfigurieren, ob Statusmetriken sichtbar sind|true|
-|`Navigation -> Status -> Logs -> sichtbar`|Konfigurieren, ob Statusprotokolle sichtbar sind|true|
-|`Navigation -> Einstellungen -> Global -> sichtbar`|Konfigurieren, ob globale Einstellungen sichtbar sind|wahr|.
-|`Navigation -> Einstellungen -> Logging-Level -> Sichtbar`|Konfigurieren, ob Protokolle sichtbar sind|wahr|
-|`Navigation -> Einstellungen -> Graphiql -> sichtbar`|Konfigurieren, ob Graphiql sichtbar ist|True|
-|`Navigation -> Einstellungen -> Swagger -> sichtbar`|Konfigurieren, ob Swagger sichtbar ist|wahr|
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| `shogunApplicationConfig.appPrefix` | The path to the app, the prefix to appear in the addressbar when the app is open. | `'/admin'` |
+| `shogunApplicationConfig.defaultPageSize` | The number of entries shown per page. | `10` |
+| `shogunApplicationConfig.path.modelConfigs` | The path to the model configurations on your host. | `'/formconfigs'` |
+| `shogunApplicationConfig.path.shogunBase` | The path to the shogunbase on your host. | `'/'` |
+| `shogunApplicationConfig.path.logo` | The path to the logo used by the admin client. | `null` |
+| `security.keycloak.enabled` | Configure whether keycloak is enabled or not. | `true` |
+| `security.keycloak. host` | The url for keycloak host. | `'https://localhost/auth'` |
+| `security.keycloak.realm` | The keykloack realm to be used. | `SpringBootKeycloak` |
+| `security.keycloak.clientId` | The id of the client that request user to authenticate the user. | `'shogun-admin'` |
+| `security.keycloak.authorizedRoles` | The list of roles with access rights. | `['admin']` |
+| `geoserver.base` | The base url of the GeoServer. | `'/'` |
+| `geoserver.upload.buttonVisible` | Configure whether the layer upload button is visible. | `false` |
+| `geoserver.upload.workspace` | The workspace the uploads should be placed in. | `SHOGUN` |
+| `geoserver.upload.limit` | The maximum storage space assigned. | `200000000` (~200MB) |
+| `models` | The list of models available in the menu. | `['Application', 'Layer', 'User', 'Group', 'Role']` |
+| `dashboard.news.visible` | Configure whether the news page is visible. | `true ` |
+| `dashboard.statistics.visible` | The visibility of the list of app statistics. | `false` |
+| `dashboard.applications.visible` | The visibility of the list of application available in the dashboard. | `true` |
+| `dashboard.layers.visible` | The visibility of the list of layers uploaded. | `true` |
+| `dashboard.users.visible` | The visibility of the list of users in the system. | `true` |
+| `navigation.general.imagefiles.visible` | The list of image files that have been uploaded by the user. | `true` |
+| `navigation.status.metrics.visible` | Configure whether status metrics are visible. | `true` |
+| `navigation.status.logs.visible` | Configure whether status logs are visible. | `true` |
+| `navigation.settings.global.visible` | Configure whether global settings are visible. | `true` |
+| `navigation.settings.logs.visible` | Configure whether logs are visible. | `true` |
+| `navigation.settings.graphiql.visible` | Whether the link to graphiql is visible or not. | `true` |
+| `navigation.settings.swagger.visible` | Whether swagger is visible. | `true` |

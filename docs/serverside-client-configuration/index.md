@@ -6,7 +6,7 @@ sidebar_position: 3
 sidebar_label: Serverside-Client-Configurations
 ---
 
-# Serverside-Client-Configurations
+# Serverside client configurations
 
 A static configuration file exists for both the Admin and the GIS client, in which global
 settings can be made. These settings include paths to external to external services or

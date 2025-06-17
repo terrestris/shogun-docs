@@ -24,6 +24,7 @@ This document contains the list of global settings for the client which can be c
 | `search.coreName` | Solr core name. | `'search'` |
 | `search.defaultUseViewBox` | Whether the search is restricted to the current view box. | `true` |
 | `search.activateLayerOnClick` | Make the layer visible if a search result is selected. | `true` |
+| `search.showSearchResultDrawer`|Whether the click on a search result entry should open a drawer with details on the search result or not.|false|
 | `search.groupByCategory` | Groups search results by 'category' text field. If disabled, the layer title will be used instead. | `true` |
 | `search.useSolrHighlighting` | Enable/disable solr search result highlighting. | `true` |
 | `search.delay` | Delay in milliseconds before search is triggered (debouncing). | `1000` |
@@ -39,3 +40,4 @@ This document contains the list of global settings for the client which can be c
 | `wfsLockFeatureEnabled` | Whether WFS LockFeature is enabled during feature editing or not. | `false` |
 | `documentationButtonVisible` | Whether the button in the user menu to open the documentation is visible or not. | `true` |
 | `enableFallbackConfig` | Whether the default application configuration should be loaded without any given application ID or not. | `true` |
+

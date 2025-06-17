@@ -1,13 +1,15 @@
 # Layers
 ***
 
-Under the menu item *Themes*, new layers can be persisted for the applications, e.g. from external WMS or the project's own GeoServer; you can also import your own raster or vector data. In addition, various settings can be made for each layer.
+Under the menu item *Layers*, new layers can be persisted for the applications, e.g. from external WMS or the project's own GeoServer; you can also import your own raster or vector data. In addition, various settings can be made for each layer.
 
 ![admin-client](/img/layers_overview.png)
 
 Existing topics can be changed by clicking on the corresponding line in the topic list. To add a new layer, click on the "Create theme" button.
 
-Raster or vector data can be imported using the "Upload theme" button.
+External WMS layers can be imported using the "Add WMS layer" button.
+
+Raster or vector data can be imported using the "Upload theme" button (if configured).
 
 As soon as a theme has been changed, it can be saved using the "Save theme" button.
 
@@ -71,11 +73,10 @@ This is a complete list of the parameters that can be edited:
 |`minResolution`|The minimum resolution of the layer (at which resolution/zoom level the layer should be visible)|10000|false|
 |`opacity`|Defines the initial opacity for the layer in a range of 0-1.|0.5|false|
 |`propertyConfig`|Not currently in use||false|
-|`searchable`|Not currently in use||false|
-|`searchConfig`|Not currently in use||false|
 |`searchable`|Determines whether the layer is searchable||false|
-|`searchConfig`|Determines which attributes are searchable during the search||false|
-|`displayTemplate`|Defines the display template for the search results|`Name: <b>{name}</b>, Adresse: <em>{adresse}</em>`|false|
+|`searchConfig -> attributes`|Determines which attributes are searchable during the search||false|
+|`searchConfig -> displayTemplate`|Defines the display template for the search results|`Name: <b>{name}</b>, Adresse: <em>{adresse}</em>`|false|
+|`searchConfig -> resultDrawerConfig`|Defines the display template for the detailed search results if resultSearchDrawer is activated|see below|false|
 |`featureInfoFormConfig`|Determines which attributes are displayed in the FeatureInfo display, further details can be found [here](#featureinfoformconfig)|[here](#featureinfoformconfig)|false|
 |`editable`|Determines whether the layer is editable, only applies to internal GeoServer layers that can be written via WFS-T|true|false|
 |`editFormConfig`|Determines which attributes are displayed in the editing form, further details can be found [here](#editformconfig)| [here](#editformconfig) |false|
@@ -257,6 +258,22 @@ There are a total of 8 output types, which are described here:
 |`TEXTAREA`|Can be used for longer texts|
 |`UPLOAD`|Offers the option to upload for the defined upload fields|
 |`REFERENCE_TABLE`|Provides a configuration option for 1:n attributes|
+
+### resultDrawerConfig 
+
+Defines the display template for the detailed search results if resultSearchDrawer is activated
+
+```
+    "resultDrawerConfig": {
+      "title": "Test",
+      "children": [
+        {
+          "propertyName": "NAME",
+          "displayName": "Name"
+        }
+      ]
+    }
+```
 
 ## Datasource
 

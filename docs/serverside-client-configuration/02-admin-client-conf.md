@@ -1,6 +1,6 @@
 ## Serverside Admin Configuration
 
-This document contains the list of global settings for the admin-client which can be configured via the `admin-client-config.jss` file. This file is considered to be accessed by the client from the path `./config/admin-client-config.js`. A template containing all the default values can be found [here](https://github.com/terrestris/shogun-admin/blob/main/assets/fallbackConfig.js).
+This document contains the list of global settings for the admin-client which can be configured via the `admin-client-config.js` file. This file is considered to be accessed by the client from the path `./config/admin-client-config.js`. A template containing all the default values can be found [here](https://github.com/terrestris/shogun-admin/blob/main/assets/fallbackConfig.js).
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
