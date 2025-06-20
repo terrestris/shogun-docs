@@ -16,5 +16,3 @@ Only users with the Admin role have access to the Admin-Client and can create or
 After successfully logging in, the administrator sees the dashboard on the right-hand side, which lists the existing entities (applications, topics and users) in brief. The desired entry can be selected directly by clicking on an entry in the respective lists.
 
 ![admin-client](/img/application_overview_admin.png)
-
-

@@ -51,6 +51,17 @@ The configuration of the application is saved in JSON format in this field. Each
       0.07
     ]
   },
+  "mapInteractions": [
+    "DragRotate",
+    "DragPan",
+    "DoubleClickZoom",
+    "PinchRotate",
+    "PinchZoom",
+    "KeyboardPan",
+    "KeyboardZoom",
+    "MouseWheelZoom",
+    "DragZoom"
+  ],
   "description": "The default application",
   "legal": {
     "contact": "https://www.terrestris.de/de/kontakt/",
@@ -61,7 +72,8 @@ The configuration of the application is saved in JSON format in this field. Each
     "primaryColor": "#008CD2",
     "secondaryColor": "#D1007F",
     "complementaryColor": "#EEEEEE"
-  }
+  },
+  "printApp": "test"
 }
 ```
 
@@ -74,7 +86,7 @@ This is a complete list of the parameters that can be edited:
 |`mapView -> extent`|The maximum extent of the map (in WGS84)|'[2.5683045738288137, 45.429089001638076, 19.382621082401887, 57.283993958205926]'|false|
 |`mapView -> projection`|Projection of the map|'EPSG:25832'|false|
 |`mapView -> resolutions`|The list of map resolutions|'[2445.9849047851562, 1222.9924523925781, 611.4962261962891]'|false|
-| `mapView → crsDefinitions` | The list of CRS definitions in proj4 format that should also be registered in the application. | \{ <br/>'crsCode': 'EPSG:25832',<br/>'definition': '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'<br/>\} | false |
+|`mapView → crsDefinitions`|The list of CRS definitions in proj4 format that should also be registered in the application.|\{ <br/>'crsCode': 'EPSG:25832',<br/>'definition': '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'<br/>\}|false|
 |`description`|Description of the application to be displayed on the start page|'My Web-GIS'|false|
 |`theme -> primaryColor`|Determines the background colour of the header and footer element|'#444444'|false|
 |`theme -> secondaryColor`|Determines the colour when hovering over text elements and buttons|'#ffc0cb'|false|
@@ -82,9 +94,20 @@ This is a complete list of the parameters that can be edited:
 |`theme -> logoPath`|URL of the logo that is displayed in the header component|https://my-logo.de/img/my-logo.png|false|
 |`theme -> faviconPath`|URL of the favicon that is displayed in the browser|https://my-logo.de/img/my-logo.png|false|
 |`defaultLanguage`|Determines the default language of the application [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).|'de'|false|
-| `legal -> imprint` | URL for the imprint link | https://www.terrestris.de/de/impressum/ | false |
-| `legal -> imprint` | URL for the contact link | https://www.terrestris.de/de/kontakt/ | false |
-| `legal -> privacy` | URL for the privacy link | https://www.terrestris.de/de/datenschutzerklaerung/ | false |
+|`printApp`|User has the ability to configure printing templates (print output) per application|'printApp':'test'|false|
+|`legal -> imprint`|URL for the imprint link|https://www.terrestris.de/de/impressum/|false|
+|`legal -> imprint`|URL for the contact link|https://www.terrestris.de/de/kontakt/|false|
+|`legal -> privacy`|URL for the privacy link|https://www.terrestris.de/de/datenschutzerklaerung/|false|
+|`mapInteractions` |The Openlayers interactions added to the map:|['DragRotate','DragPan', 'DoubleClickZoom', 'PinchRotate', 'PinchZoom', 'KeyboardPan', 'KeyboardZoom', 'MouseWheelZoom', 'DragZoom']|false|
+|`mapInteractions : DoubleClickZoom`|Allows the user to zoom by double-clicking on the map|'DoubleClickZoom'|false|
+|`mapInteractions : DragPan`|Allows the user to pan the map by dragging the map| 'DragPan'|false|
+|`mapInteractions : DragRotate`|Allows the user to rotate the map by clicking and dragging on the map, this interaction is only supported for mouse devices|'DragRotate'|false|
+|`mapInteractions : DragZoom`|Allows the user to zoom the map by clicking and dragging on the map|'DragZoom'|false|
+|`mapInteractions : KeyboardZoom`|Allows the user to zoom the map using keyboard + and -. Note that, the keys can only be used when browser focus is on the element to which the keyboard events are attached(by default, this is the map div)|'KeyboardZoom'|false|
+|`mapInteractions : KeyboardPan`|Allows the user to pan the map using keyboard arrows. Note that, the keys can only be used when browser focus is on the element to which the keyboard events are attached(by default, this is the map div)|'KeyboardPan'|false|
+|`mapInteractions : MouseWheelZoom`|Allows the user to zoom the map by scrolling the mouse wheel|'MouseWheelZoom'|false|
+|`mapInteractions : PinchRotate`|Allows the user to rotate the map by twisting with two fingers on a touch screen|'PinchRotate'|false|
+|`mapInteractions : PinchZoom`|Allows the user to zoom the map by pinching with two fingers on a touch screen|'PinchZoom'|false|
 
 ## Layertree
 
@@ -313,6 +336,9 @@ The configuration for the application tools is saved in JSON format in this fiel
   {
     "name": "tree",
     "config": {
+      "metadataVisible": false,
+      "layerIconsVisible": true,
+      "showLegends": false,
       "visible": true
     }
   },
@@ -344,14 +370,15 @@ The configuration for the application tools is saved in JSON format in this fiel
     "name": "search",
     "config": {
       "engines": [
-        "nominatim"
+        "nominatim",
+        "wfs"
       ]
     }
   }
 ]
 ```
 
-Each available tool from the toolbox is recorded in this document. If you set the visibility of a tool to 'true', it will be made available in the Web GIS application. Please note that some tools also depend on other parameters (e.g. the query capability of a layer).
+Each available tool from the toolbox is recorded in this document. If you set the visibility of a tool to `true`, it will be made available in the Web GIS application. Please note that some tools also depend on other parameters (e.g. the query capability of a layer).
 
 This is a complete list of the tools that can be configured:
 
