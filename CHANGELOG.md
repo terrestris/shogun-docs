@@ -1,3 +1,15 @@
+## [1.1.3](https://github.com/terrestris/shogun-docs/compare/v1.1.2...v1.1.3) (2025-06-20)
+
+
+### Dependencies
+
+* update docs ([51f65ad](https://github.com/terrestris/shogun-docs/commit/51f65ade4ab1b32fc24a174ec04b97d269d72cba))
+
+
+### Bugfixes
+
+* update docs ([a55a5d4](https://github.com/terrestris/shogun-docs/commit/a55a5d4a4350f960cc5132522d162e38c0a9b582))
+
 ## [1.1.2](https://github.com/terrestris/shogun-docs/compare/v1.1.1...v1.1.2) (2025-04-02)
 
 
