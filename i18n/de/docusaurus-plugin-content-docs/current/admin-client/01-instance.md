@@ -14,6 +14,10 @@ Mit der Schaltfläche "Applikation zurücksetzen" kann die Eingabemaske der Appl
 
 Beim Anlegen/Bearbeiten einer Applikation müssen neben dem Namen für die Anwendung auch die Felder *Client-Konfiguration* und *Themenbaum* ausgefüllt werden.
 
+## Öffentliche Applikation
+
+Wenn Sie den Schieberegler für öffentliche Anwendungen einschalten, ist diese Applikation ohne Anmeldung verfügbar.
+
 ## Client Konfiguration
 
 In diesem Feld wird die Konfiguration der Anwendung im JSON-Format gespeichert. Jede Anwendung kann durch Bearbeiten der JSON-Formatparameter geändert werden, z. B. die anfängliche Zoomstufe, der Titel oder das Farbschema:
@@ -88,6 +92,7 @@ Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
 |`theme -> secondaryColor`|Bestimmt die Farbe beim hovern über Textelemente und Schaltflächen|'#ffc0cb'|false|
 |`theme -> complementaryColor`|Definiert die Schriftfarbe von Textelementen in der Kopf- und Fußzeile|'#000000'|false|
 |`theme -> logoPath`|URL des Logos, das in der Kopfkomponente angezeigt wird|https://my-logo.de/img/my-logo.png|false|
+|`theme -> faviconPath`|URL des Favicons, das im Browser angezeigt wird|https://my-logo.de/img/my-logo.png|false|
 |`defaultLanguage`|Bestimmt die Default-Sprache der Applikation [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).|'de'|false|
 |`printApp`|Der Benutzer hat die Möglichkeit, die Drucktemplates pro Anwendung zu konfigurieren|'printApp':'test'|false|
 |`legal -> imprint` | URL für den Impressum-Link|https://www.terrestris.de/de/impressum/|false|
@@ -348,6 +353,12 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
     }
   },
   {
+    "name": "user_menu",
+    "config": {
+      "visible": true
+    }
+  },
+  {
     "name": "map_toolbar",
     "config": {
       "visible": true
@@ -366,19 +377,43 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
 
 Jedes verfügbare Werkzeug aus der Toolbox wird in diesem Dokument aufgezeichnet. Wenn Sie die Sichtbarkeit eines Werkzeugs auf `true` setzen, wird es in der Web-GIS-Anwendung verfügbar gemacht. Bitte beachten Sie, dass einige Werkzeuge auch von anderen Parametern abhängen (z.B. von der Abfragefähigkeit eines Layers).
 
-Dies ist eine vollständige Liste der Parameter, die bearbeitet werden können:
+Dies ist eine vollständige Liste der Werkzeuge, die konfiguriert werden können:
 
-|Key|Description|Werkzeug|
+|Werkzeug|Konfig Schlüssel|Beschreibung|
 |---|---|---|
-|`name`|Name des Tools. Der Parameter sollte nicht geändert werden|alle|
-|`config -> visible`|Legt die Sichtbarkeit eines bestimmten Tools innerhalb der Web-GIS-Anwendung fest|alle|
-|`config -> showLegends`||Definiert, ob Legenden sichtbar sind, wenn ein Layer aktiviert wird. Ist standardmäßig „nicht sichtbar“|'tree'|
-|`config -> metadataVisible`|Legt pro Applikation fest, ob die Eigenschaften eines Layers im Kontextmenü des Layers sichtbar sind. Ist standardmäßig 'sichtbar'|'tree'|
-|`config -> layerIconsVisible`|Legt für eine Applikation fest, ob zusätzliche Icons (wenn Layer abfragbar, editierbar, durchsuchbar ist) für die Layer im Layertree angezeigt werden. Ist standardmäßig 'nicht sichtbar'|'tree'|
+|`measure_tools`|`visible`|Aktivieren des Messwerkzeugs|
+|`measure_tools_area`|`visible`|Aktivieren des Flächen-Messwerkzeugs|
+|`measure_tools`|`visible`|Aktivieren des Strecken-Messwerkzeugs|
+|`draw_tools_point`|`visible`|Aktivieren des Punkt-Zeichnen-Werkzeug|
+|`draw_tools_line`|`visible`|Aktivieren des Linien-Zeichnen-Werkzeug|
+|`draw_tools_polygon`|`visible`|Aktivieren des Polygon-Zeichnen-Werkzeug|
+|`draw_tools_circle`|`visible`|Aktivieren des Kreis-Zeichnen-Werkzeug|
+|`draw_tools_rectangle`|`visible`|Aktivieren des Rechteck-Zeichnen-Werkzeug|
+|`draw_tools_annotation`|`visible`|Aktivieren des Textanmerkung-Zeichnen-Werkzeug|
+|`draw_tools_modify`|`visible`|Aktivieren des Zeichnung-Bearbeiten-Werkzeugl|
+|`draw_tools_upload`|`visible`|Aktivieren des Zeichnung-Hochladen-Werkzeug|
+|`draw_tools_download`|`visible`|Aktivieren des Zeichnung-Herunterladen-Werkzeug|
+|`draw_tools_delete`|`visible`|Aktivieren des Zeichnung-Löschen-Werkzeug|
+|`draw_tools_style`|`visible`|Aktivieren des Zeichnung-Style-Werkzeug|
+|`feature_info`|`visible`|Aktivieren des Sachdaten-Abfrage-Werkzeug|
+|`feature_info`|`activeCopyTools`|Aktivieren des Sachdaten-Abfrage-Kopier-Werkzeug, mögliche Werte: `COPY_AS_GEOJSON`, `COPY_AS_OBJECT`|
+|`print`|`visible`|Aktivieren des Drucken-Werkzeug|
+|`tree`|`visible`|Aktivieren des Themenbaums|
+|`tree`|`metadataVisible`|Ob die Metadaten der Ebene über das Kontextmenü der Ebene geöffnet werden können|
+|`tree`|`showLegends`|Ob die Layer-Legenden standardmäßig angezeigt werden|
+|`tree`|`layerIconsVisible`|Ob Icons für abfragbar, durchsuchbar und bearbeitbare Layer angezeigt werden|
+|`permalink`|`visible`|Aktivieren des Permalink/Teilen-Werkzeug|
+|`language_selector`|`visible`|Aktivieren des Sprachwechslers|
+|`map_toolbar`|`visible`|Aktivieren der Karten-Buttons für für Zoom und GPS Location|
+|`search`|`engines`|Aktivieren der Suchmaschine, mögliche Werte: `nominatim`, `wfs`|
 
 Wichtig: Wenn Sie die Konfiguration leer lassen, sind standardmäßig alle Werkzeuge verfügbar. Sobald ein Werkzeug zur Konfiguration hinzugefügt wird, sind alle anderen Werkzeuge nicht mehr verfügbar, bis sie ebenfalls explizit hinzugefügt werden.
 
-## Nutzer-Berechtigungen
+## Berechtigungen
+
+Je nach Konfiguration der Instanz können Berechtigungen auf Nutzer, Gruppen oder Rollen gesetzt werden.
+
+Im Folgenden wird die Konfiguration der Berechtigungen am Beispiel von Benutzern beschrieben. Die Konfiguration für Gruppen oder Rollen verhält sich gleich.
 
 Im Feld Benutzerrechte können die Benutzer für die jeweiligen Anwendungen aktiviert und mit Benutzerrechten versehen werden.
 

@@ -14,6 +14,11 @@ The "Reset application" button can be used to reset the input screen of the appl
 
 When creating/editing an application, the *Client configuration* and *Theme tree* fields must be filled in addition to the name for the application.
 
+## Public application
+
+If you switch the public application slider to on, this application is available without log in of the user.
+
+
 ## Client configuration
 
 The configuration of the application is saved in JSON format in this field. Each application can be changed by editing the JSON format parameters, e.g. the initial zoom level, the title or the colour scheme:
@@ -87,6 +92,7 @@ This is a complete list of the parameters that can be edited:
 |`theme -> secondaryColor`|Determines the colour when hovering over text elements and buttons|'#ffc0cb'|false|
 |`theme -> complementaryColor`|Defines the font colour of text elements in the header and footer|'#000000'|false|
 |`theme -> logoPath`|URL of the logo that is displayed in the header component|https://my-logo.de/img/my-logo.png|false|
+|`theme -> faviconPath`|URL of the favicon that is displayed in the browser|https://my-logo.de/img/my-logo.png|false|
 |`defaultLanguage`|Determines the default language of the application [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).|'de'|false|
 |`printApp`|User has the ability to configure printing templates (print output) per application|'printApp':'test'|false|
 |`legal -> imprint`|URL for the imprint link|https://www.terrestris.de/de/impressum/|false|
@@ -349,6 +355,12 @@ The configuration for the application tools is saved in JSON format in this fiel
     }
   },
   {
+    "name": "user_menu",
+    "config": {
+      "visible": true
+    }
+  },
+  {
     "name": "map_toolbar",
     "config": {
       "visible": true
@@ -368,20 +380,43 @@ The configuration for the application tools is saved in JSON format in this fiel
 
 Each available tool from the toolbox is recorded in this document. If you set the visibility of a tool to `true`, it will be made available in the Web GIS application. Please note that some tools also depend on other parameters (e.g. the query capability of a layer).
 
-This is a complete list of the parameters that can be edited:
+This is a complete list of the tools that can be configured:
 
-|Key|Description|Tool|
+|Tool|Config key|Description|
 |---|---|---|
-|`name`|Name of the tool. The parameter should not be changed|all|
-|`config -> visible`|Defines the visibility of a specific tool within the Web GIS application|all|
-|`config -> showLegends`|Defines whether legends are visible when a Layer is activated. Is 'not visible' by default|'tree'|
-|`config -> metadataVisible`|Defines of an application if the layer properties entry in the layer context menu is visible. Is 'visible' by default|'tree'|
-|`config -> layerIconsVisible`|Defines for an application if additional icons (if layers are hoverable, editable, searchable) for the layers are shown in the layertree. Is 'not visible' by default|'tree'|
-|`search -> config -> engines`|Name of the search tools to be used, can now also include wfs|'nomitatim', 'wfs'|
+|`measure_tools`|`visible`|Enable the measure tool|
+|`measure_tools_area`|`visible`|Enable the measure area tool|
+|`measure_tools`|`visible`|Enable the measure distance tool|
+|`draw_tools_point`|`visible`|Enable the draw point tool|
+|`draw_tools_line`|`visible`|Enable the draw line tool|
+|`draw_tools_polygon`|`visible`|Enable the draw polygon tool|
+|`draw_tools_circle`|`visible`|Enable the draw circle tool|
+|`draw_tools_rectangle`|`visible`|Enable the draw rectangle tool|
+|`draw_tools_annotation`|`visible`|Enable the draw annotation tool|
+|`draw_tools_modify`|`visible`|Enable the edit drawing tool|
+|`draw_tools_upload`|`visible`|Enable the tool for uploading draw objects|
+|`draw_tools_download`|`visible`|Enable the tool for downloading draw objects|
+|`draw_tools_delete`|`visible`|Enable the draw delete tool|
+|`draw_tools_style`|`visible`|Enable the draw styling tool|
+|`feature_info`|`visible`|Enable the featureInfo tool|
+|`feature_info`|`activeCopyTools`|Enable the copy tools in featureInfo, possible values: `COPY_AS_GEOJSON`, `COPY_AS_OBJECT`|
+|`print`|`visible`|Enable the print tool|
+|`tree`|`visible`|Enable the layertree tool|
+|`tree`|`metadataVisible`|Wether the layer metadata can be opened via layer context menu|
+|`tree`|`showLegends`|Wether the layer legends are displayed by default|
+|`tree`|`layerIconsVisible`|Wether icons for hoverable, searchable and editable of the layer are displayed|
+|`permalink`|`visible`|Enable the permalink tool|
+|`language_selector`|`visible`|Enable the language switch tool|
+|`map_toolbar`|`visible`|Enable the map toolbar button for zoom and gps location|
+|`search`|`engines`|Enable search engines, possible values: `nominatim`, `wfs`|
 
-Important: If you leave the configuration empty, all tools are available by default. As soon as a tool is added to the configuration, all other tools are no longer available until they are also explicitly added.
+Important: If you leave the configuration empty, most tools are available by default. As soon as a tool is added to the configuration, all other tools are no longer available until they are also explicitly added.
 
-## User permissions
+## Permissions
+
+Depending on the configuration of the instance, authorisations can be set for users, groups or roles.
+
+The configuration of authorisations is described below using the example of users. The configuration for groups or roles is the same.
 
 In the User rights field, users can be activated for the respective applications and assigned user rights.
 

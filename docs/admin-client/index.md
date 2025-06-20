@@ -13,8 +13,6 @@ The [Admin-Client](https://shogun2022.intranet.terrestris.de/admin) is used to c
 
 Only users with the Admin role have access to the Admin-Client and can create or modify Web-GIS applications.
 
-After successfully logging in, the administrator sees the dashboard on the right-hand side, which lists the existing entities (applications, layers and users) in short form. By clicking on an entry in the respective lists, the desired entry can be selected directly.
+After successfully logging in, the administrator sees the dashboard on the right-hand side, which lists the existing entities (applications, topics and users) in brief. The desired entry can be selected directly by clicking on an entry in the respective lists.
 
 ![admin-client](/img/application_overview_admin.png)
-
-
