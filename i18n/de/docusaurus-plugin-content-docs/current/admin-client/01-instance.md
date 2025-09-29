@@ -406,6 +406,7 @@ Dies ist eine vollständige Liste der Werkzeuge, die konfiguriert werden können
 |`language_selector`|`visible`|Aktivieren des Sprachwechslers|
 |`map_toolbar`|`visible`|Aktivieren der Karten-Buttons für für Zoom und GPS Location|
 |`search`|`engines`|Aktivieren der Suchmaschine, mögliche Werte: `nominatim`, `wfs`|
+|`user_menu`|`visible`|Steuert die Sichtbarkeit des Nutzermenüs (Login, Konto-Info)|
 
 Wichtig: Wenn Sie die Konfiguration leer lassen, sind standardmäßig alle Werkzeuge verfügbar. Sobald ein Werkzeug zur Konfiguration hinzugefügt wird, sind alle anderen Werkzeuge nicht mehr verfügbar, bis sie ebenfalls explizit hinzugefügt werden.
 
