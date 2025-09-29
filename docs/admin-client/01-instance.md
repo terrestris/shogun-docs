@@ -409,6 +409,7 @@ This is a complete list of the tools that can be configured:
 |`language_selector`|`visible`|Enable the language switch tool|
 |`map_toolbar`|`visible`|Enable the map toolbar button for zoom and gps location|
 |`search`|`engines`|Enable search engines, possible values: `nominatim`, `wfs`|
+|`user_menu`|`visible`|Controls the visibility of the user_menu (login, account info)|
 
 Important: If you leave the configuration empty, most tools are available by default. As soon as a tool is added to the configuration, all other tools are no longer available until they are also explicitly added.
 
