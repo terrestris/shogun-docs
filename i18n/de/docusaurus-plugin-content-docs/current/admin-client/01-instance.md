@@ -337,7 +337,11 @@ In diesem Feld wird die Konfiguration für die Anwendungstools im JSON-Format ge
       "metadataVisible": false,
       "layerIconsVisible": true,
       "showLegends": false,
-      "visible": true
+      "visible": true,
+      "uploadTools": [
+        "addWMS",
+        "dataUpload"
+      ]
     }
   },
   {
@@ -402,6 +406,7 @@ Dies ist eine vollständige Liste der Werkzeuge, die konfiguriert werden können
 |`tree`|`metadataVisible`|Ob die Metadaten der Ebene über das Kontextmenü der Ebene geöffnet werden können|
 |`tree`|`showLegends`|Ob die Layer-Legenden standardmäßig angezeigt werden|
 |`tree`|`layerIconsVisible`|Ob Icons für abfragbar, durchsuchbar und bearbeitbare Layer angezeigt werden|
+|`tree`|`uploadTools`|Gibt an, welches Upload-Tool im Themenbaum verfügbar sein soll: „addWMS“ und „dataUpload“ sind mögliche Werte; lassen Sie das Feld leer, wenn kein Upload-Tool angezeigt werden soll|
 |`permalink`|`visible`|Aktivieren des Permalink/Teilen-Werkzeug|
 |`language_selector`|`visible`|Aktivieren des Sprachwechslers|
 |`map_toolbar`|`visible`|Aktivieren der Karten-Buttons für für Zoom und GPS Location|

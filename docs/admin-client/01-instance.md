@@ -339,7 +339,11 @@ The configuration for the application tools is saved in JSON format in this fiel
       "metadataVisible": false,
       "layerIconsVisible": true,
       "showLegends": false,
-      "visible": true
+      "visible": true,
+      "uploadTools": [
+        "addWMS",
+        "dataUpload"
+      ]
     }
   },
   {
@@ -405,6 +409,7 @@ This is a complete list of the tools that can be configured:
 |`tree`|`metadataVisible`|Wether the layer metadata can be opened via layer context menu|
 |`tree`|`showLegends`|Wether the layer legends are displayed by default|
 |`tree`|`layerIconsVisible`|Wether icons for hoverable, searchable and editable of the layer are displayed|
+|`tree`|`uploadTools`|Specify which upload tool should be available in the tree: addWMS and dataUpload are possible values, leave it empty if no upload tool should be visible|
 |`permalink`|`visible`|Enable the permalink tool|
 |`language_selector`|`visible`|Enable the language switch tool|
 |`map_toolbar`|`visible`|Enable the map toolbar button for zoom and gps location|
