@@ -1,3 +1,15 @@
+## [1.1.4](https://github.com/terrestris/shogun-docs/compare/v1.1.3...v1.1.4) (2026-04-09)
+
+
+### Dependencies
+
+* add user_menu tool to available tools config ([f047a0c](https://github.com/terrestris/shogun-docs/commit/f047a0cdc34c7563a365e55b2836378550ba0f36))
+
+
+### Bugfixes
+
+* add uploadTool description for layertree ([e2843c7](https://github.com/terrestris/shogun-docs/commit/e2843c71751034b34bd3b42243b1ea6996d63bfd))
+
 ## [1.1.3](https://github.com/terrestris/shogun-docs/compare/v1.1.2...v1.1.3) (2025-06-20)
 
 
