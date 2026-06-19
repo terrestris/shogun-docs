@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  DOCKER_REGISTRY: docker-public.terrestris.de/terrestris
+  DOCKER_REGISTRY: hub.terrestris.de/shogun
 
 jobs:
   deploy:
@@ -40,7 +40,7 @@ jobs:
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
-    
+
   create_and_push_image:
     runs-on: ubuntu-latest
     steps:
@@ -71,13 +71,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         semantic_version: 23
-    
-    - name: Login to Nexus ⌨️
+
+    - name: Login to Docker registry ⌨️
       uses: docker/login-action@v1
       with:
         registry: ${{ env.DOCKER_REGISTRY }}
-        username: ${{ secrets.NEXUS_USERNAME }}
-        password: ${{ secrets.NEXUS_PASSWORD }}
+        username: ${{ secrets.DOCKER_REGISTRY_USER }}
+        password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
 
     - name: Build shogun-gis-client-docs docker image (latest) 🏗️
       uses: docker/build-push-action@v5
@@ -98,11 +98,11 @@ jobs:
           ${{ env.DOCKER_REGISTRY }}/shogun-gis-client-docs:${{ steps.semantic.outputs.new_release_version }}
         load: true
 
-    - name: Push shogun-gis-client-docs docker image to Nexus (latest) 📠
+    - name: Push shogun-gis-client-docs docker image to Docker registry (latest) 📠
       run: |
         docker push ${{ env.DOCKER_REGISTRY }}/shogun-gis-client-docs:latest
 
-    - name: Push shogun-gis-client-docs docker image to Nexus (version) 📠
+    - name: Push shogun-gis-client-docs docker image to Docker registry (version) 📠
       if: steps.semantic.outputs.new_release_published == 'true'
       run: |
         docker push ${{ env.DOCKER_REGISTRY }}/shogun-gis-client-docs:${{ steps.semantic.outputs.new_release_version }}
@@ -126,11 +126,11 @@ jobs:
           ${{ env.DOCKER_REGISTRY }}/shogun-admin-client-docs:${{ steps.semantic.outputs.new_release_version }}
         load: true
 
-    - name: Push shogun-admin-client-docs docker image to Nexus (latest) 📠
+    - name: Push shogun-admin-client-docs docker image to Docker registry (latest) 📠
       run: |
         docker push ${{ env.DOCKER_REGISTRY }}/shogun-admin-client-docs:latest
-    
-    - name: Push shogun-admin-client-docs docker image to Nexus (version) 📠
+
+    - name: Push shogun-admin-client-docs docker image to Docker registry (version) 📠
       if: steps.semantic.outputs.new_release_published == 'true'
       run: |
         docker push ${{ env.DOCKER_REGISTRY }}/shogun-admin-client-docs:${{ steps.semantic.outputs.new_release_version }}
